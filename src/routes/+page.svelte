@@ -59,15 +59,13 @@
         <span slot="header">
             DSP Prototype development
         </span>
-        <span slot="company">
-            alone at my desk
-        </span>
         <span slot="description">
-            Created a realtime optimized audio processing engine in Rust.
-            The engine hosts a web interface for controlling the DSP.
+            Created a real-time audio processing engine in Rust, which is controlled by a node-based web application.
+            Built a Raspberry Pi based hardware prototype.
         </span>
         <span slot="tags" class="flex flex-row gap-2">
             <Tag>Rust</Tag>
+            <Tag>TypeScript</Tag>
             <Tag>SvelteKit</Tag>
         </span>
     </ResumeCard>
