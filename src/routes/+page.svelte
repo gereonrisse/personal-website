@@ -1,5 +1,8 @@
 <script>
 
+import SocialIcon from "$lib/SocialIcon.svelte";
+import GitHub from "$lib/svg/GitHub.svelte";
+import LinkedIn from "$lib/svg/LinkedIn.svelte";
 </script>
 
 <svelte:head>
@@ -7,12 +10,29 @@
     <meta content="Svelte demo app" name="description"/>
 </svelte:head>
 
-<section class="flex flex-col sm:flex-row gap-6 sm:gap-12 mt-16" id="intro">
-    <div class="basis-1/3">
-		<h1 class="text-5xl font-bold text-slate-100">Hello, I'm Gereon</h1>
-		<h2 class="text-2xl font-bold text-slate-500 mt-6">Sound guy, nerd, musician.</h2>
+<!-- INTRO SECTION -->
+<section class="flex flex-col sm:flex-row gap-6 sm:gap-12 mt-16">
+
+    <!-- Header & Socials -->
+    <div class="sm:basis-1/3 flex flex-col">
+		<h1 class="text-4xl font-bold text-slate-100">
+            Hello, I'm Gereon
+        </h1>
+		<h2 class="text-xl font-bold text-slate-500 mt-6">
+            Sound engineer<br>Software engineer<br>Musician
+        </h2>
+        <div class="mt-auto flex flex-row gap-4">
+            <SocialIcon>
+                <GitHub/>
+            </SocialIcon>
+            <SocialIcon>
+                <LinkedIn/>
+            </SocialIcon>
+        </div>
 	</div>
-    <div class="basis-2/3 leading-relaxed flex flex-col gap-2 text-slate-300">
+
+    <!-- Text -->
+    <div class="sm:basis-2/3 leading-relaxed flex flex-col gap-2 text-slate-300">
         <p>
             Since my early days, I've been immersed in the realm of sound – from doing technical studio work like mixing
             and mastering, working as a live sound engineer, and composing my own music.
@@ -28,4 +48,7 @@
     </div>
 </section>
 
-
+<!-- SOFTWARE SECTION -->
+<section id="software">
+    test
+</section>

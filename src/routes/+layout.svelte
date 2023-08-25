@@ -17,7 +17,7 @@
 </script>
 
 <div class="app h-screen text-white">
-	<main class="h-full px-4 py-8 max-w-5xl mx-auto flex flex-col">
+	<main class="h-full px-4 py-8 max-w-5xl mx-auto flex flex-col gap-12 sm:gap-20">
 		<slot />
 	</main>
 
