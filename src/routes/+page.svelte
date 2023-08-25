@@ -1,13 +1,15 @@
 <script>
-
-import SocialIcon from "$lib/SocialIcon.svelte";
-import GitHub from "$lib/svg/GitHub.svelte";
-import LinkedIn from "$lib/svg/LinkedIn.svelte";
+    import SocialIcon from "$lib/SocialIcon.svelte";
+    import GitHub from "$lib/svg/GitHub.svelte";
+    import LinkedIn from "$lib/svg/LinkedIn.svelte";
+    import ResumeCard from "$lib/ResumeCard.svelte";
+    import Tag from "$lib/Tag.svelte";
+    import Link from "$lib/ExternalLink.svelte";
 </script>
 
 <svelte:head>
-    <title>Home</title>
-    <meta content="Svelte demo app" name="description"/>
+    <title>Gereon Risse</title>
+    <meta content="Personal website of Gereon Risse" name="description"/>
 </svelte:head>
 
 <!-- INTRO SECTION -->
@@ -49,6 +51,73 @@ import LinkedIn from "$lib/svg/LinkedIn.svelte";
 </section>
 
 <!-- SOFTWARE SECTION -->
-<section id="software">
-    test
+<section class="flex flex-col gap-8">
+    <ResumeCard>
+        <span slot="timespan">
+            since 2022
+        </span>
+        <span slot="header">
+            DSP Prototype development
+        </span>
+        <span slot="company">
+            alone at my desk
+        </span>
+        <span slot="description">
+            Created a realtime optimized audio processing engine in Rust.
+            The engine hosts a web interface for controlling the DSP.
+        </span>
+        <span slot="tags" class="flex flex-row gap-2">
+            <Tag>Rust</Tag>
+            <Tag>SvelteKit</Tag>
+        </span>
+    </ResumeCard>
+
+    <ResumeCard>
+        <span slot="timespan">
+            2021 - 2022
+        </span>
+        <span slot="header">
+            Lead Engineer & Project Manager
+        </span>
+        <span slot="company">
+            <Link href="https://digital-services.team/">
+                digital-services.team GmbH
+            </Link>
+        </span>
+        <span slot="description">
+            Created a web application for building and optimizing websites.
+            Led a team of engineers, specified software architecture, designed UI and UX.
+        </span>
+        <span slot="tags" class="flex flex-row gap-2">
+            <Tag>PHP</Tag>
+            <Tag>Laravel</Tag>
+            <Tag>Vue 3</Tag>
+        </span>
+    </ResumeCard>
+
+    <ResumeCard>
+        <span slot="timespan">
+            2018 - 2021
+        </span>
+        <span slot="header">
+            Software & Data Engineer
+        </span>
+        <span slot="company">
+            <Link href="https://www.integrated-analytics.de/">
+                Integrated Analytics GmbH
+            </Link>
+        </span>
+        <span slot="description">
+            Designed and implemented data pipelines for large-scale data warehousing and analytics projects.
+            Created web applications utilized within the company and for external clients.
+        </span>
+        <span slot="tags" class="flex flex-row gap-2">
+            <Tag>MySQL</Tag>
+            <Tag>PHP</Tag>
+            <Tag>Laravel</Tag>
+            <Tag>HTML</Tag>
+            <Tag>CSS</Tag>
+            <Tag>JavaScript</Tag>
+        </span>
+    </ResumeCard>
 </section>
