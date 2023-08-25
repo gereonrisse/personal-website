@@ -118,4 +118,18 @@
             <Tag>JavaScript</Tag>
         </span>
     </ResumeCard>
+
+    <ResumeCard>
+        <span slot="timespan">
+            since 2018
+        </span>
+        <span slot="header">
+            Computer Science Student
+        </span>
+        <span slot="company">
+            <Link href="https://www.uni-bonn.de/en">
+                University of Bonn
+            </Link>
+        </span>
+    </ResumeCard>
 </section>
