@@ -5,26 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="724ad4c1-0188-4e47-90f3-e7bcbe44b69d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/github.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/svelte-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/svelte-welcome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/images/svelte-welcome.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Counter.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Header.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/about/+page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/about/+page.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/+page.server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/+page.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/game.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/game.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/how-to-play/+page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/how-to-play/+page.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/reduced-motion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sverdle/words.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,6 +32,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2URcGFmiwMCdxtY91qWD29W8ivl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,7 +45,8 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -73,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1692905735456</updated>
       <workItem from="1692905736502" duration="595000" />
-      <workItem from="1692954101719" duration="1129000" />
+      <workItem from="1692954101719" duration="2355000" />
     </task>
     <servers />
   </component>

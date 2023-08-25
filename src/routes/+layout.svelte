@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
+	import "../app.css";
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
