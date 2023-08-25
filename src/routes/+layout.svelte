@@ -16,8 +16,8 @@
 	}
 </script>
 
-<div class="app">
-	<main>
+<div class="app h-screen text-white">
+	<main class="h-full px-4 py-8 max-w-5xl mx-auto flex flex-col">
 		<slot />
 	</main>
 
@@ -25,3 +25,10 @@
 
 	</footer>
 </div>
+
+<style>
+	.app {
+	/* gradient from very dark violet to less dark violet	*/
+		background: linear-gradient(180deg, theme('colors.slate.900') 0%, theme('colors.violet.950') 100%);
+	}
+</style>
