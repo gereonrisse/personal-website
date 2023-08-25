@@ -38,18 +38,9 @@
 
     <!-- Text -->
     <div class="sm:basis-2/3 leading-relaxed flex flex-col gap-2 text-slate-300">
-        <p>
-            Since my early days, I've been immersed in the realm of sound – from doing technical studio work like mixing
-            and mastering, working as a live sound engineer, and composing my own music.
-        </p>
-        <p>
-            Five years ago, I ventured into the realm of software engineering, diving deep into data engineering, web
-            app development, and eventually taking on project leadership roles.
-        </p>
-        <p>
-            My passion for both sound and code converged when I embarked on a project in late 2022 – crafting a Digital
-            Signal Processor (DSP), a sophisticated sonic computer that takes speaker systems to a new level.
-        </p>
+        <p>{$t('home.intro.p1')}</p>
+        <p>{$t('home.intro.p2')}</p>
+        <p>{$t('home.intro.p3')}</p>
     </div>
 </section>
 
@@ -59,14 +50,13 @@
     <!-- DSP -->
     <ResumeCard>
         <span slot="timespan">
-            since 2022
+            {$t('home.software.dsp.timespan')}
         </span>
         <span slot="header">
-            DSP Prototype development
+            {$t('home.software.dsp.header')}
         </span>
         <span slot="description">
-            Created a real-time audio processing engine in Rust, which is controlled by a node-based web application.
-            Built a Raspberry Pi based hardware prototype.
+            {$t('home.software.dsp.description')}
         </span>
         <span slot="tags" class="flex flex-row gap-2">
             <Tag>Rust</Tag>
@@ -75,7 +65,7 @@
         </span>
     </ResumeCard>
 
-    <!-- digital-services.team -->
+    <!-- digital-services -->
     <ResumeCard>
         <span slot="timespan">
             2021 - 2022
@@ -89,13 +79,13 @@
             </Link>
         </span>
         <span slot="description">
-            Created a web application for building and optimizing websites.
-            Led a team of engineers, specified software architecture, designed UI and UX.
+            {$t('home.software.digital-services.description')}
         </span>
         <span slot="tags" class="flex flex-row gap-2">
             <Tag>PHP</Tag>
             <Tag>Laravel</Tag>
             <Tag>Vue 3</Tag>
+            <Tag>Figma</Tag>
         </span>
     </ResumeCard>
 
@@ -113,8 +103,7 @@
             </Link>
         </span>
         <span slot="description">
-            Designed and implemented data pipelines for large-scale data warehousing and analytics projects.
-            Created web applications utilized within the company and for external clients.
+            {$t('home.software.integrated-analytics.description')}
         </span>
         <span slot="tags" class="flex flex-row gap-2">
             <Tag>MySQL</Tag>
@@ -139,6 +128,9 @@
                 University of Bonn
             </Link>
         </span>
+        <span slot="description">
+            {$t('home.software.university.description')}
+        </span>
     </ResumeCard>
-    
+
 </section>
