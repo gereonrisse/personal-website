@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
 	import "../app.css";
+	import Header from "$lib/Header.svelte";
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -17,6 +18,8 @@
 </script>
 
 <div class="app min-h-screen text-white">
+	<Header />
+
 	<main class="h-full px-4 py-8 max-w-5xl mx-auto flex flex-col gap-12 sm:gap-20">
 		<slot />
 	</main>

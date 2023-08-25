@@ -5,6 +5,7 @@
     import ResumeCard from "$lib/ResumeCard.svelte";
     import Tag from "$lib/Tag.svelte";
     import Link from "$lib/ExternalLink.svelte";
+    import { t } from '$lib/translations';
 </script>
 
 <svelte:head>
@@ -18,10 +19,12 @@
     <!-- Header & Socials -->
     <div class="sm:basis-1/3 flex flex-col">
 		<h1 class="text-4xl font-bold text-slate-100">
-            Hello, I'm Gereon
+            {$t('home.title')}
         </h1>
 		<h2 class="text-xl font-bold text-slate-500 mt-6">
-            Sound engineer<br>Software engineer<br>Musician
+            {$t('home.subtitle1')}<br>
+            {$t('home.subtitle2')}<br>
+            {$t('home.subtitle3')}
         </h2>
         <div class="mt-auto flex flex-row gap-4">
             <SocialIcon>
