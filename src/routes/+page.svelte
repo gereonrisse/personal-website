@@ -52,6 +52,8 @@
 
 <!-- SOFTWARE SECTION -->
 <section class="flex flex-col gap-8">
+
+    <!-- DSP -->
     <ResumeCard>
         <span slot="timespan">
             since 2022
@@ -70,6 +72,7 @@
         </span>
     </ResumeCard>
 
+    <!-- digital-services.team -->
     <ResumeCard>
         <span slot="timespan">
             2021 - 2022
@@ -93,6 +96,7 @@
         </span>
     </ResumeCard>
 
+    <!-- Integrated Analytics -->
     <ResumeCard>
         <span slot="timespan">
             2018 - 2021
@@ -119,6 +123,7 @@
         </span>
     </ResumeCard>
 
+    <!-- University -->
     <ResumeCard>
         <span slot="timespan">
             since 2018
@@ -132,4 +137,5 @@
             </Link>
         </span>
     </ResumeCard>
+    
 </section>
