@@ -133,4 +133,11 @@
         </span>
     </ResumeCard>
 
+    <div class="flex sm:flex-row gap-12">
+        <div class="sm:basis-1/3"></div>
+        <div class="sm:basis-2/3 font-semibold text-slate-300 hover:text-slate-100">
+            <Link>{$t('home.software.cv')}</Link>
+        </div>
+    </div>
+
 </section>
