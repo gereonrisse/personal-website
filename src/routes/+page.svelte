@@ -14,19 +14,19 @@
 </svelte:head>
 
 <!-- INTRO SECTION -->
-<section class="flex flex-col sm:flex-row gap-6 sm:gap-12 mt-16">
+<section class="flex flex-col sm:flex-row gap-6 sm:gap-12 mt-16 px-2">
 
     <!-- Header & Socials -->
     <div class="sm:basis-1/3 flex flex-col">
 		<h1 class="text-4xl font-bold text-slate-100">
             {$t('home.title')}
         </h1>
-		<h2 class="text-xl font-bold text-slate-500 mt-6">
+		<h2 class="text-xl font-bold text-slate-500 my-6">
             {$t('home.subtitle1')}<br>
             {$t('home.subtitle2')}<br>
             {$t('home.subtitle3')}
         </h2>
-        <div class="mt-auto flex flex-row gap-4">
+        <div class="mt-auto mb-2 flex flex-row gap-4">
             <SocialIcon>
                 <GitHub/>
             </SocialIcon>
@@ -58,7 +58,7 @@
         <span slot="description">
             {$t('home.software.dsp.description')}
         </span>
-        <span slot="tags" class="flex flex-row gap-2">
+        <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>Rust</Tag>
             <Tag>TypeScript</Tag>
             <Tag>SvelteKit</Tag>
@@ -81,7 +81,7 @@
         <span slot="description">
             {$t('home.software.digital-services.description')}
         </span>
-        <span slot="tags" class="flex flex-row gap-2">
+        <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>PHP</Tag>
             <Tag>Laravel</Tag>
             <Tag>Vue 3</Tag>
@@ -105,7 +105,7 @@
         <span slot="description">
             {$t('home.software.integrated-analytics.description')}
         </span>
-        <span slot="tags" class="flex flex-row gap-2">
+        <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>MySQL</Tag>
             <Tag>PHP</Tag>
             <Tag>Laravel</Tag>
