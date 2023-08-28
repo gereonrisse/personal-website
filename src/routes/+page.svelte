@@ -21,7 +21,7 @@
 		<h1 class="text-4xl font-bold text-slate-100">
             {$t('home.title')}
         </h1>
-		<h2 class="text-xl font-bold text-slate-500 my-6">
+		<h2 class="text-xl font-bold text-slate-500 my-6 leading-relaxed">
             {$t('home.subtitle1')}<br>
             {$t('home.subtitle2')}<br>
             {$t('home.subtitle3')}
