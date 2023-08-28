@@ -39,113 +39,118 @@
 </section>
 
 <div class="flex flex-col gap-12 sm:gap-32">
+    <div class="sm:hidden border-t-2 mt-4 mx-4 border-slate-500"></div>
+
     <!-- SOFTWARE SECTION -->
     <section>
         <SectionHeader name="software">Where I've worked</SectionHeader>
 
         <!-- Resume cards -->
-        <div class="mt-16 flex flex-col gap-8">
+        <div class="mt-12 flex flex-col gap-8">
             <!-- DSP -->
             <ResumeCard>
-        <span slot="timespan">
-            {$t('home.software.dsp.timespan')}
-        </span>
-                <span slot="header">
-            {$t('home.software.dsp.header')}
-        </span>
-                <span slot="description">
-            {$t('home.software.dsp.description')}
-        </span>
-                <span slot="tags" class="flex flex-row flex-wrap gap-2">
-            <Tag>Rust</Tag>
-            <Tag>TypeScript</Tag>
-            <Tag>SvelteKit</Tag>
-        </span>
+                <span slot="timespan">
+                    {$t('home.software.dsp.timespan')}
+                </span>
+                        <span slot="header">
+                    {$t('home.software.dsp.header')}
+                </span>
+                        <span slot="description">
+                    {$t('home.software.dsp.description')}
+                </span>
+                        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                    <Tag>Rust</Tag>
+                    <Tag>TypeScript</Tag>
+                    <Tag>SvelteKit</Tag>
+                </span>
             </ResumeCard>
 
             <!-- digital-services -->
             <ResumeCard>
-        <span slot="timespan">
-            2021 - 2022
-        </span>
-                <span slot="header">
-            Lead Engineer & Project Manager
-        </span>
-                <span slot="company">
-            <Link href="https://digital-services.team/">
-                digital-services.team GmbH
-            </Link>
-        </span>
-                <span slot="description">
-            {$t('home.software.digital-services.description')}
-        </span>
-                <span slot="tags" class="flex flex-row flex-wrap gap-2">
-            <Tag>PHP</Tag>
-            <Tag>Laravel</Tag>
-            <Tag>Vue 3</Tag>
-            <Tag>Figma</Tag>
-        </span>
+                <span slot="timespan">
+                    2021 - 2022
+                </span>
+                        <span slot="header">
+                    Lead Engineer & Project Manager
+                </span>
+                        <span slot="company">
+                    <Link href="https://digital-services.team/">
+                        digital-services.team GmbH
+                    </Link>
+                </span>
+                        <span slot="description">
+                    {$t('home.software.digital-services.description')}
+                </span>
+                        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                    <Tag>PHP</Tag>
+                    <Tag>Laravel</Tag>
+                    <Tag>Vue 3</Tag>
+                    <Tag>Figma</Tag>
+                </span>
             </ResumeCard>
 
             <!-- Integrated Analytics -->
             <ResumeCard>
-        <span slot="timespan">
-            2018 - 2021
-        </span>
-                <span slot="header">
-            Software & Data Engineer
-        </span>
-                <span slot="company">
-            <Link href="https://www.integrated-analytics.de/">
-                Integrated Analytics GmbH
-            </Link>
-        </span>
-                <span slot="description">
-            {$t('home.software.integrated-analytics.description')}
-        </span>
-                <span slot="tags" class="flex flex-row flex-wrap gap-2">
-            <Tag>MySQL</Tag>
-            <Tag>PHP</Tag>
-            <Tag>Laravel</Tag>
-            <Tag>HTML</Tag>
-            <Tag>CSS</Tag>
-            <Tag>JavaScript</Tag>
-        </span>
+                <span slot="timespan">
+                    2018 - 2021
+                </span>
+                        <span slot="header">
+                    Software & Data Engineer
+                </span>
+                        <span slot="company">
+                    <Link href="https://www.integrated-analytics.de/">
+                        Integrated Analytics GmbH
+                    </Link>
+                </span>
+                        <span slot="description">
+                    {$t('home.software.integrated-analytics.description')}
+                </span>
+                        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                    <Tag>MySQL</Tag>
+                    <Tag>PHP</Tag>
+                    <Tag>Laravel</Tag>
+                    <Tag>HTML</Tag>
+                    <Tag>CSS</Tag>
+                    <Tag>JavaScript</Tag>
+                </span>
             </ResumeCard>
 
             <!-- University -->
             <ResumeCard>
-        <span slot="timespan">
-            since 2018
-        </span>
-                <span slot="header">
-            Computer Science Student
-        </span>
-                <span slot="company">
-            <Link href="https://www.uni-bonn.de/en">
-                University of Bonn
-            </Link>
-        </span>
-                <span slot="description">
-            {$t('home.software.university.description')}
-        </span>
+                <span slot="timespan">
+                    since 2018
+                </span>
+                        <span slot="header">
+                    Computer Science Student
+                </span>
+                        <span slot="company">
+                    <Link href="https://www.uni-bonn.de/en">
+                        University of Bonn
+                    </Link>
+                </span>
+                        <span slot="description">
+                    {$t('home.software.university.description')}
+                </span>
             </ResumeCard>
 
-            <div class="flex sm:flex-row gap-12">
-                <div class="sm:basis-1/3"></div>
-                <div class="sm:basis-2/3 font-semibold text-slate-300 hover:text-slate-100">
-                    <Link>{$t('home.software.cv')}</Link>
+            <div>
+                <div class="mx-auto max-w-sm">
+                    <Button>
+                        <a href="https://gereon.online/" target="_blank">{$t('home.software.cv')}</a>
+                    </Button>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <div class="sm:hidden border-t-2 mt-4 mx-4 border-slate-500"></div>
+
     <!-- AUDIO ENGINEER SECTION -->
     <section>
         <SectionHeader name="audio">Audio Engineering</SectionHeader>
 
-        <div class="mt-8 mx-auto max-w-sm">
+        <div class="mt-6 sm:mt-8 mx-auto max-w-sm">
             <div class="leading-relaxed text-slate-300">
                 <p>
                     Over the years, I've come to do a lot of audio engineering work. Some of the services I can now offer
@@ -159,7 +164,7 @@
                 </ul>
             </div>
 
-            <div class="mt-8 text-center">
+            <div class="mt-6 sm:mt-8 text-center">
                 <Button>
                     <a href="mailto:gereon.risse@gmail.com">Contact me</a>
                 </Button>
@@ -167,16 +172,18 @@
         </div>
     </section>
 
+    <div class="sm:hidden border-t-2 mt-4 mx-4 border-slate-500"></div>
+
     <!-- MUSIC SECTION -->
     <section>
         <SectionHeader name="music">Music</SectionHeader>
 
-        <div class="mt-8 max-w-sm mx-auto text-center">
+        <div class="mt-6 sm:mt-8 max-w-sm mx-auto text-center">
             <p class="leading-relaxed text-slate-300">
                 I am not very active right now, but hopefully I will be again soon.
             </p>
 
-            <div class="mt-8 w-full text-center">
+            <div class="mt-6 sm:mt-8 w-full text-center">
                 <Button>
                     <a href="https://gereon.online/" target="_blank">Hear my music</a>
                 </Button>
