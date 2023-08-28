@@ -4,6 +4,7 @@
     import Link from "$lib/ExternalLink.svelte";
     import { t } from '$lib/translations';
     import SectionHeader from "$lib/SectionHeader.svelte";
+    import Button from "$lib/Button.svelte";
 </script>
 
 <svelte:head>
@@ -14,7 +15,7 @@
 <!-- INTRO SECTION -->
 <section class="flex flex-col h-screen my-auto justify-center max-w-5xl">
     <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 px-4">
-        <!-- Header & Socials -->
+        <!-- Header -->
         <div class="sm:basis-1/3 flex flex-col">
             <h1 class="text-4xl font-bold text-slate-100 animate-fade-in motion-reduce:animate-none">
                 {$t('home.title')}
@@ -37,8 +38,8 @@
     </div>
 </section>
 
-<!-- SOFTWARE SECTION -->
 <div class="flex flex-col gap-12 sm:gap-32">
+    <!-- SOFTWARE SECTION -->
     <section>
         <SectionHeader name="software">Where I've worked</SectionHeader>
 
@@ -144,8 +145,25 @@
     <section>
         <SectionHeader name="audio">Audio Engineering</SectionHeader>
 
-        <div class="mt-16">
-            todo
+        <div class="mt-8 mx-auto max-w-sm">
+            <div class="leading-relaxed text-slate-300">
+                <p>
+                    Over the years, I've come to do a lot of audio engineering work. Some of the services I can now offer
+                    professionally are:
+                </p>
+
+                <ul class="mt-4 ml-6 text-slate-300 list-disc">
+                    <li>Event Technician (Sound Systems / FOH)</li>
+                    <li>Studio Post-Processing (Mixing / Mastering)</li>
+                    <li>Sound Installations</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 text-center">
+                <Button>
+                    <a href="mailto:gereon.risse@gmail.com">Contact me</a>
+                </Button>
+            </div>
         </div>
     </section>
 
@@ -153,8 +171,16 @@
     <section>
         <SectionHeader name="music">Music</SectionHeader>
 
-        <div class="mt-16">
-            todo
+        <div class="mt-8 max-w-sm mx-auto text-center">
+            <p class="leading-relaxed text-slate-300">
+                I am not very active right now, but hopefully I will be again soon.
+            </p>
+
+            <div class="mt-8 w-full text-center">
+                <Button>
+                    <a href="https://gereon.online/" target="_blank">Hear my music</a>
+                </Button>
+            </div>
         </div>
     </section>
 </div>
