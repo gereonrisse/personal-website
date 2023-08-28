@@ -4,6 +4,7 @@
 	import { webVitals } from '$lib/vitals';
 	import "../app.css";
 	import Header from "$lib/Header.svelte";
+	import Footer from "$lib/Footer.svelte";
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -20,13 +21,11 @@
 <div class="app min-h-screen text-white">
 	<Header />
 
-	<main class="h-full max-w-5xl mx-auto flex flex-col gap-12 sm:gap-20">
+	<main class="h-full max-w-5xl mx-auto">
 		<slot />
 	</main>
 
-	<footer>
-
-	</footer>
+	<Footer />
 </div>
 
 <style>

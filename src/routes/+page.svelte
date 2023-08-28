@@ -38,70 +38,71 @@
 </section>
 
 <!-- SOFTWARE SECTION -->
-<section>
-    <SectionHeader name="software">Where I've worked</SectionHeader>
+<div class="flex flex-col gap-12 sm:gap-32">
+    <section>
+        <SectionHeader name="software">Where I've worked</SectionHeader>
 
-    <!-- Resume cards -->
-    <div class="mt-16 flex flex-col gap-8">
-        <!-- DSP -->
-        <ResumeCard>
+        <!-- Resume cards -->
+        <div class="mt-16 flex flex-col gap-8">
+            <!-- DSP -->
+            <ResumeCard>
         <span slot="timespan">
             {$t('home.software.dsp.timespan')}
         </span>
-            <span slot="header">
+                <span slot="header">
             {$t('home.software.dsp.header')}
         </span>
-            <span slot="description">
+                <span slot="description">
             {$t('home.software.dsp.description')}
         </span>
-            <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>Rust</Tag>
             <Tag>TypeScript</Tag>
             <Tag>SvelteKit</Tag>
         </span>
-        </ResumeCard>
+            </ResumeCard>
 
-        <!-- digital-services -->
-        <ResumeCard>
+            <!-- digital-services -->
+            <ResumeCard>
         <span slot="timespan">
             2021 - 2022
         </span>
-            <span slot="header">
+                <span slot="header">
             Lead Engineer & Project Manager
         </span>
-            <span slot="company">
+                <span slot="company">
             <Link href="https://digital-services.team/">
                 digital-services.team GmbH
             </Link>
         </span>
-            <span slot="description">
+                <span slot="description">
             {$t('home.software.digital-services.description')}
         </span>
-            <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>PHP</Tag>
             <Tag>Laravel</Tag>
             <Tag>Vue 3</Tag>
             <Tag>Figma</Tag>
         </span>
-        </ResumeCard>
+            </ResumeCard>
 
-        <!-- Integrated Analytics -->
-        <ResumeCard>
+            <!-- Integrated Analytics -->
+            <ResumeCard>
         <span slot="timespan">
             2018 - 2021
         </span>
-            <span slot="header">
+                <span slot="header">
             Software & Data Engineer
         </span>
-            <span slot="company">
+                <span slot="company">
             <Link href="https://www.integrated-analytics.de/">
                 Integrated Analytics GmbH
             </Link>
         </span>
-            <span slot="description">
+                <span slot="description">
             {$t('home.software.integrated-analytics.description')}
         </span>
-            <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>MySQL</Tag>
             <Tag>PHP</Tag>
             <Tag>Laravel</Tag>
@@ -109,37 +110,51 @@
             <Tag>CSS</Tag>
             <Tag>JavaScript</Tag>
         </span>
-        </ResumeCard>
+            </ResumeCard>
 
-        <!-- University -->
-        <ResumeCard>
+            <!-- University -->
+            <ResumeCard>
         <span slot="timespan">
             since 2018
         </span>
-            <span slot="header">
+                <span slot="header">
             Computer Science Student
         </span>
-            <span slot="company">
+                <span slot="company">
             <Link href="https://www.uni-bonn.de/en">
                 University of Bonn
             </Link>
         </span>
-            <span slot="description">
+                <span slot="description">
             {$t('home.software.university.description')}
         </span>
-        </ResumeCard>
+            </ResumeCard>
 
-        <div class="flex sm:flex-row gap-12">
-            <div class="sm:basis-1/3"></div>
-            <div class="sm:basis-2/3 font-semibold text-slate-300 hover:text-slate-100">
-                <Link>{$t('home.software.cv')}</Link>
+            <div class="flex sm:flex-row gap-12">
+                <div class="sm:basis-1/3"></div>
+                <div class="sm:basis-2/3 font-semibold text-slate-300 hover:text-slate-100">
+                    <Link>{$t('home.software.cv')}</Link>
+                </div>
             </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- AUDIO ENGINEER SECTION -->
+    <section>
+        <SectionHeader name="audio">Audio Engineering</SectionHeader>
 
-<!-- AUDIO ENGINEER SECTION -->
-<section>
+        <div class="mt-16">
+            todo
+        </div>
+    </section>
 
-</section>
+    <!-- MUSIC SECTION -->
+    <section>
+        <SectionHeader name="music">Music</SectionHeader>
+
+        <div class="mt-16">
+            todo
+        </div>
+    </section>
+</div>
