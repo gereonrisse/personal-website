@@ -8,23 +8,25 @@
     }
 </script>
 
-<header class="px-4 pt-4 max-w-5xl mx-auto flex justify-end gap-4">
-    <!-- mailto -->
-    <a class="text-slate-400 hover:text-slate-200 h-5 w-5" href="mailto:gereon.risse@gmail.com">
-        <Envelope />
-    </a>
+<header class="absolute w-full animate-fade-in-delayed motion-reduce:animate-none">
+    <div class="w-full px-4 pt-4 max-w-5xl mx-auto flex justify-end gap-4">
+        <!-- mailto -->
+        <a class="text-slate-400 hover:text-slate-200 h-5 w-5" href="mailto:gereon.risse@gmail.com">
+            <Envelope/>
+        </a>
 
-    <!-- GitHub link -->
-    <a class="text-slate-400 hover:text-slate-200 h-5 w-5" href="https://github.com/gereonrisse" target="_blank">
-        <GitHub />
-    </a>
+        <!-- GitHub link -->
+        <a class="text-slate-400 hover:text-slate-200 h-5 w-5" href="https://github.com/gereonrisse" target="_blank">
+            <GitHub/>
+        </a>
 
-    <!-- vertical divider -->
-    <div class="w-px h-5 bg-slate-500"></div>
+        <!-- vertical divider -->
+        <div class="w-px h-5 bg-slate-500"></div>
 
-    <!-- language toggle -->
-    <button class="text-xs text-slate-400 hover:text-slate-200"
-            on:click={toggleLocale}>
-        {$locale === 'en' ? 'DE' : 'EN'}
-    </button>
+        <!-- language toggle -->
+        <button class="text-xs text-slate-400 hover:text-slate-200"
+                on:click={toggleLocale}>
+            {$locale === 'en' ? 'DE' : 'EN'}
+        </button>
+    </div>
 </header>

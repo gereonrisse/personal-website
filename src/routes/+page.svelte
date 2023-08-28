@@ -1,7 +1,4 @@
 <script>
-    import SocialIcon from "$lib/SocialIcon.svelte";
-    import GitHub from "$lib/svg/GitHub.svelte";
-    import LinkedIn from "$lib/svg/LinkedIn.svelte";
     import ResumeCard from "$lib/ResumeCard.svelte";
     import Tag from "$lib/Tag.svelte";
     import Link from "$lib/ExternalLink.svelte";
@@ -14,25 +11,26 @@
 </svelte:head>
 
 <!-- INTRO SECTION -->
-<section class="flex flex-col sm:flex-row gap-6 sm:gap-12 mt-16 px-2">
+<section class="flex flex-col h-screen my-auto justify-center max-w-5xl">
+    <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 px-4">
+        <!-- Header & Socials -->
+        <div class="sm:basis-1/3 flex flex-col">
+            <h1 class="text-4xl font-bold text-slate-100 animate-fade-in motion-reduce:animate-none">
+                {$t('home.title')}
+            </h1>
+            <h2 class="text-xl font-bold text-slate-500 my-6 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
+                {$t('home.subtitle1')}<br>
+                {$t('home.subtitle2')}<br>
+                {$t('home.subtitle3')}
+            </h2>
+        </div>
 
-    <!-- Header & Socials -->
-    <div class="sm:basis-1/3 flex flex-col">
-		<h1 class="text-4xl font-bold text-slate-100">
-            {$t('home.title')}
-        </h1>
-		<h2 class="text-xl font-bold text-slate-500 my-6 leading-relaxed">
-            {$t('home.subtitle1')}<br>
-            {$t('home.subtitle2')}<br>
-            {$t('home.subtitle3')}
-        </h2>
-	</div>
-
-    <!-- Text -->
-    <div class="sm:basis-2/3 leading-relaxed flex flex-col gap-2 text-slate-300">
-        <p>{$t('home.intro.p1')}</p>
-        <p>{$t('home.intro.p2')}</p>
-        <p>{$t('home.intro.p3')}</p>
+        <!-- Text -->
+        <div class="sm:basis-2/3 leading-relaxed flex flex-col gap-2 text-slate-300 animate-fly-in-slow motion-reduce:animate-none">
+            <p>{$t('home.intro.p1')}</p>
+            <p>{$t('home.intro.p2')}</p>
+            <p>{$t('home.intro.p3')}</p>
+        </div>
     </div>
 </section>
 
