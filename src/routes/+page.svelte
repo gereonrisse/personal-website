@@ -3,6 +3,7 @@
     import Tag from "$lib/Tag.svelte";
     import Link from "$lib/ExternalLink.svelte";
     import { t } from '$lib/translations';
+    import SectionHeader from "$lib/SectionHeader.svelte";
 </script>
 
 <svelte:head>
@@ -18,11 +19,13 @@
             <h1 class="text-4xl font-bold text-slate-100 animate-fade-in motion-reduce:animate-none">
                 {$t('home.title')}
             </h1>
-            <h2 class="text-xl font-bold text-slate-500 my-6 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
-                {$t('home.subtitle1')}<br>
-                {$t('home.subtitle2')}<br>
-                {$t('home.subtitle3')}
-            </h2>
+            <nav class="text-xl font-bold text-slate-500 my-6 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
+                <ol>
+                    <li class="hover:text-slate-300"><a href="#software">{$t('home.subtitle1')}</a></li>
+                    <li class="hover:text-slate-300"><a href="#audio">{$t('home.subtitle2')}</a></li>
+                    <li class="hover:text-slate-300"><a href="#music">{$t('home.subtitle3')}</a></li>
+                </ol>
+            </nav>
         </div>
 
         <!-- Text -->
@@ -35,67 +38,70 @@
 </section>
 
 <!-- SOFTWARE SECTION -->
-<section class="flex flex-col gap-8">
+<section>
+    <SectionHeader name="software">Where I've worked</SectionHeader>
 
-    <!-- DSP -->
-    <ResumeCard>
+    <!-- Resume cards -->
+    <div class="mt-16 flex flex-col gap-8">
+        <!-- DSP -->
+        <ResumeCard>
         <span slot="timespan">
             {$t('home.software.dsp.timespan')}
         </span>
-        <span slot="header">
+            <span slot="header">
             {$t('home.software.dsp.header')}
         </span>
-        <span slot="description">
+            <span slot="description">
             {$t('home.software.dsp.description')}
         </span>
-        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+            <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>Rust</Tag>
             <Tag>TypeScript</Tag>
             <Tag>SvelteKit</Tag>
         </span>
-    </ResumeCard>
+        </ResumeCard>
 
-    <!-- digital-services -->
-    <ResumeCard>
+        <!-- digital-services -->
+        <ResumeCard>
         <span slot="timespan">
             2021 - 2022
         </span>
-        <span slot="header">
+            <span slot="header">
             Lead Engineer & Project Manager
         </span>
-        <span slot="company">
+            <span slot="company">
             <Link href="https://digital-services.team/">
                 digital-services.team GmbH
             </Link>
         </span>
-        <span slot="description">
+            <span slot="description">
             {$t('home.software.digital-services.description')}
         </span>
-        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+            <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>PHP</Tag>
             <Tag>Laravel</Tag>
             <Tag>Vue 3</Tag>
             <Tag>Figma</Tag>
         </span>
-    </ResumeCard>
+        </ResumeCard>
 
-    <!-- Integrated Analytics -->
-    <ResumeCard>
+        <!-- Integrated Analytics -->
+        <ResumeCard>
         <span slot="timespan">
             2018 - 2021
         </span>
-        <span slot="header">
+            <span slot="header">
             Software & Data Engineer
         </span>
-        <span slot="company">
+            <span slot="company">
             <Link href="https://www.integrated-analytics.de/">
                 Integrated Analytics GmbH
             </Link>
         </span>
-        <span slot="description">
+            <span slot="description">
             {$t('home.software.integrated-analytics.description')}
         </span>
-        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+            <span slot="tags" class="flex flex-row flex-wrap gap-2">
             <Tag>MySQL</Tag>
             <Tag>PHP</Tag>
             <Tag>Laravel</Tag>
@@ -103,31 +109,37 @@
             <Tag>CSS</Tag>
             <Tag>JavaScript</Tag>
         </span>
-    </ResumeCard>
+        </ResumeCard>
 
-    <!-- University -->
-    <ResumeCard>
+        <!-- University -->
+        <ResumeCard>
         <span slot="timespan">
             since 2018
         </span>
-        <span slot="header">
+            <span slot="header">
             Computer Science Student
         </span>
-        <span slot="company">
+            <span slot="company">
             <Link href="https://www.uni-bonn.de/en">
                 University of Bonn
             </Link>
         </span>
-        <span slot="description">
+            <span slot="description">
             {$t('home.software.university.description')}
         </span>
-    </ResumeCard>
+        </ResumeCard>
 
-    <div class="flex sm:flex-row gap-12">
-        <div class="sm:basis-1/3"></div>
-        <div class="sm:basis-2/3 font-semibold text-slate-300 hover:text-slate-100">
-            <Link>{$t('home.software.cv')}</Link>
+        <div class="flex sm:flex-row gap-12">
+            <div class="sm:basis-1/3"></div>
+            <div class="sm:basis-2/3 font-semibold text-slate-300 hover:text-slate-100">
+                <Link>{$t('home.software.cv')}</Link>
+            </div>
         </div>
+
     </div>
+</section>
+
+<!-- AUDIO ENGINEER SECTION -->
+<section>
 
 </section>
