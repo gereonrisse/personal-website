@@ -26,14 +26,6 @@
             {$t('home.subtitle2')}<br>
             {$t('home.subtitle3')}
         </h2>
-        <div class="mt-auto mb-2 flex flex-row gap-4">
-            <SocialIcon>
-                <GitHub/>
-            </SocialIcon>
-            <SocialIcon>
-                <LinkedIn/>
-            </SocialIcon>
-        </div>
 	</div>
 
     <!-- Text -->
