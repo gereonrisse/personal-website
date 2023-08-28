@@ -18,7 +18,7 @@
                 <slot name="company" />
             </h3>
 
-            <p class="mt-4 text-sm text-slate-300">
+            <p class="mt-4 text-sm text-slate-300 leading-relaxed">
                 <slot name="description" />
             </p>
 
