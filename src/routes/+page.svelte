@@ -54,8 +54,10 @@
 
 <!-- Down Arrow -->
 {#if showArrow}
-    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 h-6 w-6 text-slate-300 animate-fade-in-delayed motion-reduce:animate-none" transition:fade>
-        <DownArrow />
+    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 p-3 rounded-full animate-fade-in-delayed motion-reduce:animate-none z-10 backdrop-blur" transition:fade>
+        <div class="h-6 w-6 text-slate-300">
+            <DownArrow />
+        </div>
     </div>
 {/if}
 
