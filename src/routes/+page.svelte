@@ -43,7 +43,7 @@
 
     <!-- SOFTWARE SECTION -->
     <section>
-        <SectionHeader name="software">Where I've worked</SectionHeader>
+        <SectionHeader name="software">{$t('home.software.header')}</SectionHeader>
 
         <!-- Resume cards -->
         <div class="mt-12 flex flex-col gap-8">

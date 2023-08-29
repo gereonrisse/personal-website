@@ -29,8 +29,14 @@
 </div>
 
 <style>
-	.app {
-	/* gradient from very dark violet to less dark violet	*/
+	/*.app {
 		background: linear-gradient(180deg, theme('colors.slate.900') 0%, theme('colors.violet.950') 100%);
+	}*/
+	.app {
+		background: radial-gradient(
+				circle at 50% 50%,
+				theme('colors.violet.950'),
+				theme('colors.slate.900')
+		);
 	}
 </style>
