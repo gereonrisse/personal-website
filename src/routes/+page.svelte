@@ -27,7 +27,7 @@
 </svelte:head>
 
 <!-- INTRO SECTION -->
-<section class="flex flex-col h-screen my-auto justify-center max-w-5xl">
+<section class="flex flex-col min-h-screen my-auto justify-center max-w-5xl">
     <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 px-4">
         <!-- Header -->
         <div class="sm:basis-1/3 flex flex-col">
@@ -172,7 +172,7 @@
     <section>
         <SectionHeader name="audio">{$t('home.audio.header')}</SectionHeader>
 
-        <div class="mt-6 sm:mt-8 mx-auto max-w-sm">
+        <div class="px-4 mt-6 sm:mt-8 mx-auto max-w-md">
             <div class="leading-relaxed text-slate-300">
                 <p>{$t('home.audio.text')}</p>
 
@@ -197,7 +197,7 @@
     <section>
         <SectionHeader name="music">{$t('home.music.header')}</SectionHeader>
 
-        <div class="mt-6 sm:mt-8 max-w-sm mx-auto text-center">
+        <div class="px-4 mt-6 sm:mt-8 mx-auto max-w-md text-center">
             <p class="leading-relaxed text-slate-300">{$t('home.music.text')}</p>
 
             <div class="mt-6 sm:mt-8 w-full text-center">

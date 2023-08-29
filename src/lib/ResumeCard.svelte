@@ -1,4 +1,4 @@
-<div class="py-4 rounded-md hover:bg-slate-800/50 flex flex-col sm:flex-row gap-4 sm:gap-12 max-w-sm sm:max-w-full mx-auto sm:mx-0 px-2">
+<div class="px-4 sm:px-2 py-4 rounded-md hover:bg-slate-800/50 flex flex-col sm:flex-row gap-4 sm:gap-12 max-w-sm sm:max-w-full w-full mx-auto sm:mx-0">
 
     <!-- left side (timespan) -->
     <div class="sm:pl-12 sm:basis-1/3 mt-1 text-sm font-semibold tracking-wide text-slate-400">

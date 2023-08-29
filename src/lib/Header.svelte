@@ -11,7 +11,7 @@
     }
 </script>
 
-<header class="absolute w-full animate-fade-in-delayed motion-reduce:animate-none">
+<header class="relative sm:absolute mb-4 sm:mb-0 w-full animate-fade-in-delayed motion-reduce:animate-none">
     <div class="w-full px-4 pt-4 max-w-5xl mx-auto flex justify-end gap-4">
         <!-- mailto -->
         <a class="text-slate-400 hover:text-rose-200 h-5 w-5" href="mailto:gereon.risse@gmail.com">
