@@ -134,13 +134,14 @@
                 </span>
             </ResumeCard>
 
-            <div>
+            <!-- TODO add CV -->
+            <!-- <div>
                 <div class="mx-auto max-w-sm">
                     <Button>
-                        <a href="https://gereon.online/" target="_blank">{$t('home.software.cv')}</a>
+                        <a href="#" target="_blank">{$t('home.software.cv')}</a>
                     </Button>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </section>
