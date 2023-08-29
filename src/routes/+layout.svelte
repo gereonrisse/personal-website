@@ -20,20 +20,33 @@
 		});
 	}
 
+	// Translations.
 	onMount(() => {
-		// Translations.
+
 		$locale = window.localStorage.locale || getLocaleFromBrowser();
 	});
-
 	function getLocaleFromBrowser() {
 		const supportedLocales = ['en', 'de'];
 		const browserLocale = navigator.language.split('-')[0];
 
 		return supportedLocales.includes(browserLocale) ? browserLocale : 'en';
 	}
+
+	// Mouse-responsive background.
+	let bgLeft = "50%";
+	let bgTop = "50%";
+	function handlePointerMove(e) {
+		if (!browser) return;
+
+		const { clientX, clientY } = e;
+		const { innerWidth, innerHeight } = window;
+
+		bgLeft = Math.round((clientX / innerWidth) * 100) + "%";
+		bgTop = Math.round((clientY / innerHeight) * 100) + "%";
+	}
 </script>
 
-<div class="app min-h-screen text-white">
+<div class="min-h-screen text-white" on:pointermove|preventDefault={handlePointerMove}>
 	<Header />
 
 	<main class="h-full max-w-5xl mx-auto">
@@ -41,17 +54,18 @@
 	</main>
 
 	<Footer />
+
+	<div class="background fixed inset-0 z-[-1]" style="--bgLeft:{bgLeft}; --bgTop:{bgTop}">
+
+	</div>
 </div>
 
 <style>
-	/*.app {
-		background: linear-gradient(180deg, theme('colors.slate.900') 0%, theme('colors.violet.950') 100%);
-	}*/
-	.app {
+	.background {
 		background: radial-gradient(
-				circle at 50% 50%,
-				theme('colors.violet.950'),
-				theme('colors.slate.900')
+				circle at var(--bgLeft) var(--bgTop),
+				theme('colors.slate.900'),
+				theme('colors.slate.950')
 		);
 	}
 </style>
