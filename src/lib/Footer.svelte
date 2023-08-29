@@ -18,12 +18,13 @@
     </div>
 
     <div class="mt-4 flex gap-4 mx-auto">
-        <button class="text-slate-400 hover:text-rose-200" on:click={showImprint}>
+        <!-- TODO add imprint -->
+        <!-- <button class="text-slate-400 hover:text-rose-200" on:click={showImprint}>
             {$t('common.footer.imprint')}
         </button>
 
-        <!-- vertical divider -->
-        <div class="w-px h-5 bg-slate-500"></div>
+        &lt;!&ndash; vertical divider &ndash;&gt;
+        <div class="w-px h-5 bg-slate-500"></div> -->
 
         <button class="text-slate-400 hover:text-rose-200">
             <a href="mailto:gereon.risse@gmail.com">{$t('common.footer.contact')}</a>
