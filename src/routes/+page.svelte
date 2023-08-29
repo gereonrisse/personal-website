@@ -6,6 +6,19 @@
     import SectionHeader from "$lib/SectionHeader.svelte";
     import Button from "$lib/Button.svelte";
     import Divider from "$lib/Divider.svelte";
+    import DownArrow from "$lib/svg/DownArrow.svelte";
+    import { browser } from '$app/environment';
+    import { fade } from 'svelte/transition';
+
+    // Down Arrow.
+    let showArrow = true;
+    if (browser) {
+        const handleScroll = () => {
+            showArrow = false;
+            window.removeEventListener('scroll', handleScroll);
+        };
+        window.addEventListener('scroll', handleScroll);
+    }
 </script>
 
 <svelte:head>
@@ -38,6 +51,13 @@
         </div>
     </div>
 </section>
+
+<!-- Down Arrow -->
+{#if showArrow}
+    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 h-6 w-6 text-slate-300 animate-fade-in-delayed motion-reduce:animate-none" transition:fade>
+        <DownArrow />
+    </div>
+{/if}
 
 <div class="flex flex-col gap-12 sm:gap-32">
     <Divider />
