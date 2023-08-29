@@ -7,7 +7,9 @@
 }
 
 @supports (font-variation-settings: normal) {
-    :root { font-family: 'Inter var', sans-serif; }
+    :root {
+        font-family: 'Inter var', sans-serif;
+    }
 }
 
 /* ************************************************
@@ -15,14 +17,24 @@
  * ***********************************************+ */
 
 @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fade-in-delayed {
-    0% { opacity: 0; }
-    66% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes fly-in {

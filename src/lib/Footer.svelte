@@ -8,8 +8,8 @@
 
 <footer class="mt-32 w-full mx-auto pb-8 max-w-5xl flex flex-col text-xs">
     <a class="text-slate-400 hover:text-rose-200 mx-auto font-semibold"
-       target="_blank"
-       href="https://github.com/gereonrisse/personal-website">
+       href="https://github.com/gereonrisse/personal-website"
+       target="_blank">
         {$t('common.footer.credit')}
     </a>
 

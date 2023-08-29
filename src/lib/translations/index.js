@@ -36,4 +36,4 @@ const config = ({
     ],
 });
 
-export const { t, locale, locales, loading, loadTranslations } = new i18n(config);
+export const {t, locale, locales, loading, loadTranslations} = new i18n(config);

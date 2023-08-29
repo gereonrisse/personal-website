@@ -1,7 +1,7 @@
 <script>
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
-	import { webVitals } from '$lib/vitals';
+	import {browser} from '$app/environment';
+	import {page} from '$app/stores';
+	import {webVitals} from '$lib/vitals';
 	import "../app.css";
 	import Header from "$lib/Header.svelte";
 	import Footer from "$lib/Footer.svelte";
@@ -9,63 +9,65 @@
 	import {onMount} from "svelte";
 
 	/** @type {import('./$types').LayoutServerData} */
-	export let data;
+    export let data;
 
-	// Vercel Analytics.
-	$: if (browser && data?.analyticsId) {
-		webVitals({
-			path: $page.url.pathname,
-			params: $page.params,
-			analyticsId: data.analyticsId
-		});
-	}
+    // Vercel Analytics.
+    $: if (browser && data?.analyticsId) {
+        webVitals({
+            path: $page.url.pathname,
+            params: $page.params,
+            analyticsId: data.analyticsId
+        });
+    }
 
-	// Translations.
-	onMount(() => {
+    // Translations.
+    onMount(() => {
 
-		$locale = window.localStorage.locale || getLocaleFromBrowser();
-	});
-	function getLocaleFromBrowser() {
-		const supportedLocales = ['en', 'de'];
-		const browserLocale = navigator.language.split('-')[0];
+        $locale = window.localStorage.locale || getLocaleFromBrowser();
+    });
 
-		return supportedLocales.includes(browserLocale) ? browserLocale : 'en';
-	}
+    function getLocaleFromBrowser() {
+        const supportedLocales = ['en', 'de'];
+        const browserLocale = navigator.language.split('-')[0];
 
-	// Mouse-responsive background.
-	let bgLeft = "50%";
-	let bgTop = "50%";
-	function handlePointerMove(e) {
-		if (!browser) return;
+        return supportedLocales.includes(browserLocale) ? browserLocale : 'en';
+    }
 
-		const { clientX, clientY } = e;
-		const { innerWidth, innerHeight } = window;
+    // Mouse-responsive background.
+    let bgLeft = "50%";
+    let bgTop = "50%";
 
-		bgLeft = Math.round((clientX / innerWidth) * 100) + "%";
-		bgTop = Math.round((clientY / innerHeight) * 100) + "%";
-	}
+    function handlePointerMove(e) {
+        if (!browser) return;
+
+        const {clientX, clientY} = e;
+        const {innerWidth, innerHeight} = window;
+
+        bgLeft = Math.round((clientX / innerWidth) * 100) + "%";
+        bgTop = Math.round((clientY / innerHeight) * 100) + "%";
+    }
 </script>
 
 <div class="min-h-screen text-white" on:pointermove|preventDefault={handlePointerMove}>
-	<Header />
+    <Header/>
 
-	<main class="h-full max-w-5xl mx-auto">
-		<slot />
-	</main>
+    <main class="h-full max-w-5xl mx-auto">
+        <slot/>
+    </main>
 
-	<Footer />
+    <Footer/>
 
-	<div class="background fixed inset-0 z-[-1]" style="--bgLeft:{bgLeft}; --bgTop:{bgTop}">
+    <div class="background fixed inset-0 z-[-1]" style="--bgLeft:{bgLeft}; --bgTop:{bgTop}">
 
-	</div>
+    </div>
 </div>
 
 <style>
-	.background {
-		background: radial-gradient(
-				circle at var(--bgLeft) var(--bgTop),
-				theme('colors.slate.900'),
-				theme('colors.slate.950')
-		);
-	}
+    .background {
+        background: radial-gradient(
+                circle at var(--bgLeft) var(--bgTop),
+                theme('colors.slate.900'),
+                theme('colors.slate.950')
+        );
+    }
 </style>

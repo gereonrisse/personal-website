@@ -11,19 +11,19 @@
     <div class="sm:pr-12 sm:basis-2/3">
         <div class="max-w-sm">
             <h2 class="text-lg font-bold text-slate-100">
-                <slot name="header" />
+                <slot name="header"/>
             </h2>
 
             <h3 class="text-base font-semibold text-slate-400 hover:text-rose-300">
-                <slot name="company" />
+                <slot name="company"/>
             </h3>
 
             <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                <slot name="description" />
+                <slot name="description"/>
             </p>
 
             <div class="mt-4">
-                <slot name="tags" />
+                <slot name="tags"/>
             </div>
         </div>
     </div>

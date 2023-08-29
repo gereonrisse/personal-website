@@ -3,13 +3,11 @@
   "subtitle1": "Software Engineer",
   "subtitle2": "Audio Engineer",
   "subtitle3": "Musician",
-
   "intro": {
     "p1": "Since my early days, I've been immersed in the realm of sound – doing technical studio work like mixing and mastering, working as a live sound engineer, and composing my own music.",
     "p2": "Five years ago, I ventured into the realm of software engineering, diving deep into data engineering, web app development, and eventually taking on project leadership roles.",
     "p3": "My passion for both sound and code converged when I embarked on a project in late 2022 – crafting a Digital Signal Processor (DSP), a sophisticated sonic computer that takes speaker systems to a new level."
   },
-
   "software": {
     "header": "Where I've worked",
     "dsp": {
@@ -28,7 +26,6 @@
     },
     "cv": "View my CV"
   },
-
   "audio": {
     "header": "Audio Engineering",
     "text": "Over the years, I've come to do a lot of audio engineering work. Some of the services I can now offer professionally are:",
@@ -37,7 +34,6 @@
     "bullet3": "Sound Installations",
     "button": "Contact me"
   },
-
   "music": {
     "header": "Music",
     "text": "I am not very active right now, but hopefully I will be again soon.",

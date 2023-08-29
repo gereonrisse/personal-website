@@ -1,5 +1,5 @@
 <script>
-    import { locale } from '$lib/translations';
+    import {locale} from '$lib/translations';
     import GitHub from "$lib/svg/GitHub.svelte";
     import Envelope from "$lib/svg/Envelope.svelte";
 

@@ -4,9 +4,9 @@
     export let href = '#';
 </script>
 
-<a href="{href}" target="_blank" class="flex flex-row gap-2">
-    <slot />
+<a class="flex flex-row gap-2" href="{href}" target="_blank">
+    <slot/>
     <div class="w-4 h-4 mt-1">
-        <NewTab />
+        <NewTab/>
     </div>
 </a>

@@ -2,13 +2,13 @@
     import ResumeCard from "$lib/ResumeCard.svelte";
     import Tag from "$lib/Tag.svelte";
     import Link from "$lib/ExternalLink.svelte";
-    import { t } from '$lib/translations';
+    import {t} from '$lib/translations';
     import SectionHeader from "$lib/SectionHeader.svelte";
     import Button from "$lib/Button.svelte";
     import Divider from "$lib/Divider.svelte";
     import DownArrow from "$lib/svg/DownArrow.svelte";
-    import { browser } from '$app/environment';
-    import { fade } from 'svelte/transition';
+    import {browser} from '$app/environment';
+    import {fade} from 'svelte/transition';
 
     // Down Arrow.
     let showArrow = true;
@@ -54,15 +54,16 @@
 
 <!-- Down Arrow -->
 {#if showArrow}
-    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 p-3 rounded-full animate-fade-in-delayed motion-reduce:animate-none z-10 backdrop-blur" transition:fade>
+    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 p-3 rounded-full animate-fade-in-delayed motion-reduce:animate-none z-10 backdrop-blur"
+         transition:fade>
         <div class="h-6 w-6 text-slate-300">
-            <DownArrow />
+            <DownArrow/>
         </div>
     </div>
 {/if}
 
 <div class="flex flex-col gap-12 sm:gap-32">
-    <Divider />
+    <Divider/>
 
     <!-- SOFTWARE SECTION -->
     <section>
@@ -75,13 +76,13 @@
                 <span slot="timespan">
                     {$t('home.software.dsp.timespan')}
                 </span>
-                        <span slot="header">
+                <span slot="header">
                     {$t('home.software.dsp.header')}
                 </span>
-                        <span slot="description">
+                <span slot="description">
                     {$t('home.software.dsp.description')}
                 </span>
-                        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                <span class="flex flex-row flex-wrap gap-2" slot="tags">
                     <Tag>Rust</Tag>
                     <Tag>TypeScript</Tag>
                     <Tag>SvelteKit</Tag>
@@ -93,18 +94,18 @@
                 <span slot="timespan">
                     2021 - 2022
                 </span>
-                        <span slot="header">
+                <span slot="header">
                     Lead Engineer & Project Manager
                 </span>
-                        <span slot="company">
+                <span slot="company">
                     <Link href="https://digital-services.team/">
                         digital-services.team GmbH
                     </Link>
                 </span>
-                        <span slot="description">
+                <span slot="description">
                     {$t('home.software.digital-services.description')}
                 </span>
-                        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                <span class="flex flex-row flex-wrap gap-2" slot="tags">
                     <Tag>PHP</Tag>
                     <Tag>Laravel</Tag>
                     <Tag>Vue 3</Tag>
@@ -117,18 +118,18 @@
                 <span slot="timespan">
                     2018 - 2021
                 </span>
-                        <span slot="header">
+                <span slot="header">
                     Software & Data Engineer
                 </span>
-                        <span slot="company">
+                <span slot="company">
                     <Link href="https://www.integrated-analytics.de/">
                         Integrated Analytics GmbH
                     </Link>
                 </span>
-                        <span slot="description">
+                <span slot="description">
                     {$t('home.software.integrated-analytics.description')}
                 </span>
-                        <span slot="tags" class="flex flex-row flex-wrap gap-2">
+                <span class="flex flex-row flex-wrap gap-2" slot="tags">
                     <Tag>MySQL</Tag>
                     <Tag>PHP</Tag>
                     <Tag>Laravel</Tag>
@@ -143,15 +144,15 @@
                 <span slot="timespan">
                     since 2018
                 </span>
-                        <span slot="header">
+                <span slot="header">
                     Computer Science Student
                 </span>
-                        <span slot="company">
+                <span slot="company">
                     <Link href="https://www.uni-bonn.de/en">
                         University of Bonn
                     </Link>
                 </span>
-                        <span slot="description">
+                <span slot="description">
                     {$t('home.software.university.description')}
                 </span>
             </ResumeCard>
@@ -168,7 +169,7 @@
         </div>
     </section>
 
-    <Divider />
+    <Divider/>
 
     <!-- AUDIO ENGINEER SECTION -->
     <section>
@@ -193,7 +194,7 @@
         </div>
     </section>
 
-    <Divider />
+    <Divider/>
 
     <!-- MUSIC SECTION -->
     <section>
