@@ -5,6 +5,7 @@
     import { t } from '$lib/translations';
     import SectionHeader from "$lib/SectionHeader.svelte";
     import Button from "$lib/Button.svelte";
+    import Divider from "$lib/Divider.svelte";
 </script>
 
 <svelte:head>
@@ -22,9 +23,9 @@
             </h1>
             <nav class="text-xl font-bold text-slate-500 my-6 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
                 <ol>
-                    <li class="hover:text-slate-300"><a href="#software">{$t('home.subtitle1')}</a></li>
-                    <li class="hover:text-slate-300"><a href="#audio">{$t('home.subtitle2')}</a></li>
-                    <li class="hover:text-slate-300"><a href="#music">{$t('home.subtitle3')}</a></li>
+                    <li class="hover:text-rose-300"><a href="#software">{$t('home.subtitle1')}</a></li>
+                    <li class="hover:text-rose-300"><a href="#audio">{$t('home.subtitle2')}</a></li>
+                    <li class="hover:text-rose-300"><a href="#music">{$t('home.subtitle3')}</a></li>
                 </ol>
             </nav>
         </div>
@@ -39,7 +40,7 @@
 </section>
 
 <div class="flex flex-col gap-12 sm:gap-32">
-    <div class="sm:hidden border-t-2 mt-4 mx-4 border-slate-500"></div>
+    <Divider />
 
     <!-- SOFTWARE SECTION -->
     <section>
@@ -144,7 +145,7 @@
         </div>
     </section>
 
-    <div class="sm:hidden border-t-2 mt-4 mx-4 border-slate-500"></div>
+    <Divider />
 
     <!-- AUDIO ENGINEER SECTION -->
     <section>
@@ -169,7 +170,7 @@
         </div>
     </section>
 
-    <div class="sm:hidden border-t-2 mt-4 mx-4 border-slate-500"></div>
+    <Divider />
 
     <!-- MUSIC SECTION -->
     <section>

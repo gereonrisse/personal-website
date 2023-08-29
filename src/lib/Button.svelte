@@ -1,4 +1,4 @@
 <button
-        class="p-3 w-full border border-slate-400 hover:border-slate-300 rounded-md bg-slate-500/10 hover:bg-slate-500/25 text-slate-200 hover:text-white">
+        class="p-3 w-full border border-rose-500 hover:border-rose-300 rounded-md hover:bg-rose-500/25 text-slate-200 hover:text-white">
     <slot />
 </button>

@@ -1,4 +1,4 @@
-<div class="py-4 rounded-md hover:bg-slate-900/25 flex flex-col sm:flex-row gap-4 sm:gap-12 max-w-sm sm:max-w-full mx-auto sm:mx-0 px-2">
+<div class="py-4 rounded-md hover:bg-slate-800/50 flex flex-col sm:flex-row gap-4 sm:gap-12 max-w-sm sm:max-w-full mx-auto sm:mx-0 px-2">
 
     <!-- left side (timespan) -->
     <div class="sm:pl-12 sm:basis-1/3 mt-1 text-sm font-semibold tracking-wide text-slate-400">
@@ -14,7 +14,7 @@
                 <slot name="header" />
             </h2>
 
-            <h3 class="text-base font-semibold text-slate-400 hover:text-slate-300">
+            <h3 class="text-base font-semibold text-slate-400 hover:text-rose-300">
                 <slot name="company" />
             </h3>
 

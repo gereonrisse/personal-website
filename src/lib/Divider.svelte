@@ -1,0 +1,1 @@
+<div class="sm:hidden border-t-2 mt-4 mx-4 border-slate-500"></div>
