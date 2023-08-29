@@ -148,25 +148,22 @@
 
     <!-- AUDIO ENGINEER SECTION -->
     <section>
-        <SectionHeader name="audio">Audio Engineering</SectionHeader>
+        <SectionHeader name="audio">{$t('home.audio.header')}</SectionHeader>
 
         <div class="mt-6 sm:mt-8 mx-auto max-w-sm">
             <div class="leading-relaxed text-slate-300">
-                <p>
-                    Over the years, I've come to do a lot of audio engineering work. Some of the services I can now offer
-                    professionally are:
-                </p>
+                <p>{$t('home.audio.text')}</p>
 
                 <ul class="mt-4 ml-6 text-slate-300 list-disc">
-                    <li>Event Technician (Sound Systems / FOH)</li>
-                    <li>Studio Post-Processing (Mixing / Mastering)</li>
-                    <li>Sound Installations</li>
+                    <li>{$t('home.audio.bullet1')}</li>
+                    <li>{$t('home.audio.bullet2')}</li>
+                    <li>{$t('home.audio.bullet3')}</li>
                 </ul>
             </div>
 
             <div class="mt-6 sm:mt-8 text-center">
                 <Button>
-                    <a href="mailto:gereon.risse@gmail.com">Contact me</a>
+                    <a href="mailto:gereon.risse@gmail.com">{$t('home.audio.button')}</a>
                 </Button>
             </div>
         </div>
@@ -176,16 +173,14 @@
 
     <!-- MUSIC SECTION -->
     <section>
-        <SectionHeader name="music">Music</SectionHeader>
+        <SectionHeader name="music">{$t('home.music.header')}</SectionHeader>
 
         <div class="mt-6 sm:mt-8 max-w-sm mx-auto text-center">
-            <p class="leading-relaxed text-slate-300">
-                I am not very active right now, but hopefully I will be again soon.
-            </p>
+            <p class="leading-relaxed text-slate-300">{$t('home.music.text')}</p>
 
             <div class="mt-6 sm:mt-8 w-full text-center">
                 <Button>
-                    <a href="https://gereon.online/" target="_blank">Hear my music</a>
+                    <a href="https://gereon.online/" target="_blank">{$t('home.music.button')}</a>
                 </Button>
             </div>
         </div>

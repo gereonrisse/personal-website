@@ -26,5 +26,20 @@
       "description": "I like the low-level stuff."
     },
     "cv": "View my CV"
+  },
+
+  "audio": {
+    "header": "Audio Engineering",
+    "text": "Over the years, I've come to do a lot of audio engineering work. Some of the services I can now offer professionally are:",
+    "bullet1": "Event Technician (Sound Systems / FOH)",
+    "bullet2": "Studio Post-Processing (Mixing / Mastering)",
+    "bullet3": "Sound Installations",
+    "button": "Contact me"
+  },
+
+  "music": {
+    "header": "Music",
+    "text": "I am not very active right now, but hopefully I will be again soon.",
+    "button": "Hear my music"
   }
 }

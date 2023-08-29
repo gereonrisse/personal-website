@@ -19,14 +19,6 @@ const config = ({
             ).default,
         },
         {
-            locale: 'en',
-            key: 'about',
-            routes: ['/about'],
-            loader: async () => (
-                await import('./en/about.json')
-            ).default,
-        },
-        {
             locale: 'de',
             key: 'common',
             loader: async () => (
@@ -39,14 +31,6 @@ const config = ({
             routes: ['/'],
             loader: async () => (
                 await import('./de/home.json')
-            ).default,
-        },
-        {
-            locale: 'de',
-            key: 'about',
-            routes: ['/about'],
-            loader: async () => (
-                await import('./de/about.json')
             ).default,
         },
     ],
