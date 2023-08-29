@@ -1,67 +1,73 @@
 <script>
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
-	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
-	import './styles.css';
+	import {browser} from '$app/environment';
+	import {page} from '$app/stores';
+	import {webVitals} from '$lib/vitals';
+	import "../app.css";
+	import Header from "$lib/Header.svelte";
+	import Footer from "$lib/Footer.svelte";
+	import {locale} from "$lib/translations/index.js";
+	import {onMount} from "svelte";
 
 	/** @type {import('./$types').LayoutServerData} */
-	export let data;
+    export let data;
 
-	$: if (browser && data?.analyticsId) {
-		webVitals({
-			path: $page.url.pathname,
-			params: $page.params,
-			analyticsId: data.analyticsId
-		});
-	}
+    // Vercel Analytics.
+    $: if (browser && data?.analyticsId) {
+        webVitals({
+            path: $page.url.pathname,
+            params: $page.params,
+            analyticsId: data.analyticsId
+        });
+    }
+
+    // Translations.
+    onMount(() => {
+
+        $locale = window.localStorage.locale || getLocaleFromBrowser();
+    });
+
+    function getLocaleFromBrowser() {
+        const supportedLocales = ['en', 'de'];
+        const browserLocale = navigator.language.split('-')[0];
+
+        return supportedLocales.includes(browserLocale) ? browserLocale : 'en';
+    }
+
+    // Mouse-responsive background.
+    let bgLeft = "50%";
+    let bgTop = "50%";
+
+    function handlePointerMove(e) {
+        if (!browser) return;
+
+        const {clientX, clientY} = e;
+        const {innerWidth, innerHeight} = window;
+
+        bgLeft = Math.round((clientX / innerWidth) * 100) + "%";
+        bgTop = Math.round((clientY / innerHeight) * 100) + "%";
+    }
 </script>
 
-<div class="app">
-	<Header />
+<div class="min-h-screen text-white" on:pointermove|preventDefault={handlePointerMove}>
+    <Header/>
 
-	<main>
-		<slot />
-	</main>
+    <main class="h-full max-w-5xl mx-auto">
+        <slot/>
+    </main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+    <Footer/>
+
+    <div class="background fixed inset-0 z-[-1]" style="--bgLeft:{bgLeft}; --bgTop:{bgTop}">
+
+    </div>
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
+    .background {
+        background: radial-gradient(
+                circle at var(--bgLeft) var(--bgTop),
+                theme('colors.slate.900'),
+                theme('colors.slate.950')
+        );
+    }
 </style>

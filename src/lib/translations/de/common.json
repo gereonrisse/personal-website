@@ -1,0 +1,8 @@
+{
+  "footer": {
+    "credit": "Designt und implementiert von Gereon Risse",
+    "tech-stack": "Mit SvelteKit und Tailwind CSS gebaut, über Vercel ausgespielt",
+    "imprint": "Impressum",
+    "contact": "Kontakt"
+  }
+}

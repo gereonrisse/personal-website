@@ -1,0 +1,42 @@
+{
+  "title": "Hallöchen, ich bin Gereon",
+  "subtitle1": "Tontechniker",
+  "subtitle2": "Software Engineer",
+  "subtitle3": "Musiker",
+  "intro": {
+    "p1": "Schon immer waren Musik und Ton meine Welt – von Studioarbeit wie Mixing und Mastering, über das Arbeiten als Tontechniker bei Events, bis hin zur Eigenkomposition von Musik.",
+    "p2": "Vor fünf Jahren bin ich dann in die Softwareentwicklung reingerutscht, habe dort in den Bereichen Data Engineering und Web App Entwicklung gearbeitet, zuletzt auch als Projektleiter.",
+    "p3": "Meine Liebe zu Audio und Code habe ich Ende 2022 mit einem eigenen Projekt vereint: Einem Audio-DSP, ein \"Klangcomputer\", mit dem Lautsprechersysteme auf die nächste Stufe gehoben werden können."
+  },
+  "software": {
+    "header": "Bisherige Arbeit",
+    "dsp": {
+      "timespan": "seit 2022",
+      "header": "Entwicklung eines Audio-DSP-Prototypen",
+      "description": "Ich habe eine Echtzeit-Audio-Engine in Rust gebaut, die von einer node-basierten Webanwendung gesteuert wird. Die Engine läuft auf einem Hardware-Prototypen mit einem Raspberry Pi als Basis."
+    },
+    "digital-services": {
+      "description": "Wir haben eine Webanwendung zur Gestaltung, Optimierung und dem Ausspielen von Webseiten gebaut. Ich habe ein Team von Softwareentwicklern geleitet, die Softwarearchitektur spezifiziert, und UI und UX designt."
+    },
+    "integrated-analytics": {
+      "description": "Ich habe die Verarbeitung für Data Warehousing und -Analyse designt und implementiert. Außerdem habe ich Webanwendungen für die interne Nutzung in der Firma sowie für Kunden gebaut."
+    },
+    "university": {
+      "description": "Ich mag den systemnahen Bereich."
+    },
+    "cv": "Mein Lebenslauf"
+  },
+  "audio": {
+    "header": "Tontechnik",
+    "text": "Über die Jahre habe ich in so einigen Bereichen der Tontechnik gearbeitet. Einige der Dienstleistungen, die ich nun professionell anbieten kann, sind:",
+    "bullet1": "Veranstaltungstechniker (Systemer / FOH)",
+    "bullet2": "Studio Nachbearbeitung (Mixing / Mastering)",
+    "bullet3": "Lautsprechenstallationen",
+    "button": "Kontakt aufnehmen"
+  },
+  "music": {
+    "header": "Musik",
+    "text": "Leider bin ich grade nicht sehr aktiv, aber hoffentlich bald wieder.",
+    "button": "Meine Musik hören"
+  }
+}
