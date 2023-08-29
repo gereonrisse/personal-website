@@ -5,16 +5,31 @@
 	import "../app.css";
 	import Header from "$lib/Header.svelte";
 	import Footer from "$lib/Footer.svelte";
+	import {locale} from "$lib/translations/index.js";
+	import {onMount} from "svelte";
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
 
+	// Vercel Analytics.
 	$: if (browser && data?.analyticsId) {
 		webVitals({
 			path: $page.url.pathname,
 			params: $page.params,
 			analyticsId: data.analyticsId
 		});
+	}
+
+	onMount(() => {
+		// Translations.
+		$locale = window.localStorage.locale || getLocaleFromBrowser();
+	});
+
+	function getLocaleFromBrowser() {
+		const supportedLocales = ['en', 'de'];
+		const browserLocale = navigator.language.split('-')[0];
+
+		return supportedLocales.includes(browserLocale) ? browserLocale : 'en';
 	}
 </script>
 

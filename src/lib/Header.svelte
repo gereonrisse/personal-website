@@ -4,7 +4,10 @@
     import Envelope from "$lib/svg/Envelope.svelte";
 
     function toggleLocale() {
-        locale.set(locale.get() === 'en' ? 'de' : 'en');
+        const newLocale = locale.get() === 'en' ? 'de' : 'en';
+
+        $locale = newLocale; // Update immediately
+        window.localStorage.locale = newLocale; // Store in local storage
     }
 </script>
 
