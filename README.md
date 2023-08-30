@@ -5,5 +5,5 @@ My personal portfolio at [gereon-risse.com](https://gereon-risse.com/), built wi
 # TODO
 - [ ] Swap Favicon
 - [ ] Add full CV PDF
-- [ ] Add Imprint modal
-- [ ] Add DSP blog
+- [ ] Add Imprint modal 
+- [ ] Add DSP blog 
