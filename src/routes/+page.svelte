@@ -92,7 +92,7 @@
             <!-- digital-services -->
             <ResumeCard>
                 <span slot="timespan">
-                    2021 - 2022
+                    {$t('home.software.digital-services.timespan')}
                 </span>
                 <span slot="header">
                     Lead Engineer & Project Manager
@@ -116,7 +116,7 @@
             <!-- Integrated Analytics -->
             <ResumeCard>
                 <span slot="timespan">
-                    2018 - 2021
+                    {$t('home.software.integrated-analytics.timespan')}
                 </span>
                 <span slot="header">
                     Software & Data Engineer
@@ -142,7 +142,7 @@
             <!-- University -->
             <ResumeCard>
                 <span slot="timespan">
-                    since 2018
+                    {$t('home.software.university.timespan')}
                 </span>
                 <span slot="header">
                     Computer Science Student
