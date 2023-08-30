@@ -1,42 +1,45 @@
 {
-  "title": "Hallöchen, ich bin Gereon",
+  "title": "Hi, ich bin Gereon",
   "subtitle1": "Tontechniker",
   "subtitle2": "Software Engineer",
   "subtitle3": "Musiker",
   "intro": {
-    "p1": "Schon immer waren Musik und Ton meine Welt – von Studioarbeit wie Mixing und Mastering, über das Arbeiten als Tontechniker bei Events, bis hin zur Eigenkomposition von Musik.",
-    "p2": "Vor fünf Jahren bin ich dann in die Softwareentwicklung reingerutscht, habe dort in den Bereichen Data Engineering und Web App Entwicklung gearbeitet, zuletzt auch als Projektleiter.",
-    "p3": "Meine Liebe zu Audio und Code habe ich Ende 2022 mit einem eigenen Projekt vereint: Einem Audio-DSP, ein \"Klangcomputer\", mit dem Lautsprechersysteme auf die nächste Stufe gehoben werden können."
+    "p1": "Schon immer waren Musik und Ton meine Welt – Ich mache Studioarbeit wie Mixing und Mastering, arbeite als Tontechniker bei Events, und produziere selbst Musik.",
+    "p2": "Seit fünf Jahren bin ich in der Softwareentwicklung tätig. Ich habe dort in den Bereichen Data Engineering und Web App Entwicklung gearbeitet, zuletzt auch als Projektleiter.",
+    "p3": "Meine Liebe zu Audio und Code konnte seit Ende 2022 in einem eigenen Projekt vereinen: Einem Linux-basierten Audio-DSP, ein \"Klangcomputer\", der durch Nutzung heute verfügbarer Rechenleistung Lautsprechersysteme auf die nächste Stufe hebt."
   },
   "software": {
     "header": "Bisherige Arbeit",
     "dsp": {
-      "timespan": "seit 2022",
+      "timespan": "seit Dez 2022",
       "header": "Entwicklung eines Audio-DSP-Prototypen",
-      "description": "Ich habe eine Echtzeit-Audio-Engine in Rust gebaut, die von einer node-basierten Webanwendung gesteuert wird. Die Engine läuft auf einem Hardware-Prototypen mit einem Raspberry Pi als Basis."
+      "description": "Ich habe eine Echtzeit-Audio-Engine in Rust gebaut, die von einer node-basierten Webanwendung gesteuert wird. Sie läuft auf Linux, wodurch leistungshungrigere Algorithmen eingesetzt werden können. Die Engine läuft auf einem Hardware-Prototypen mit einem Raspberry Pi als Basis."
     },
     "digital-services": {
-      "description": "Wir haben eine Webanwendung zur Gestaltung, Optimierung und dem Ausspielen von Webseiten gebaut. Ich habe ein Team von Softwareentwicklern geleitet, die Softwarearchitektur spezifiziert, und UI und UX designt."
+      "timespan": "Jan 2022 - Dez 2022",
+      "description": "Wir haben eine Webanwendung zur Gestaltung, Optimierung und dem Ausspielen von Webseiten gebaut. Dabei habe ich ein Team von Softwareentwickler:innen geleitet, die Softwarearchitektur spezifiziert, und UI und UX designt."
     },
     "integrated-analytics": {
+      "timespan": "Feb 2018 - Dez 2021",
       "description": "Ich habe die Verarbeitung für Data Warehousing und -Analyse designt und implementiert. Außerdem habe ich Webanwendungen für die interne Nutzung in der Firma sowie für Kunden gebaut."
     },
     "university": {
+      "timespan": "seit Okt 2018",
       "description": "Ich mag den systemnahen Bereich."
     },
     "cv": "Mein Lebenslauf"
   },
   "audio": {
     "header": "Tontechnik",
-    "text": "Über die Jahre habe ich in so einigen Bereichen der Tontechnik gearbeitet. Einige der Dienstleistungen, die ich nun professionell anbieten kann, sind:",
+    "text": "Über die Jahre habe ich in verschiedenen Bereichen der Tontechnik gearbeitet. Professionell anbieten kann ich unter Anderem:",
     "bullet1": "Veranstaltungstechniker (Systemer / FOH)",
     "bullet2": "Studio Nachbearbeitung (Mixing / Mastering)",
-    "bullet3": "Lautsprechenstallationen",
+    "bullet3": "Lautsprecherinstallationen",
     "button": "Kontakt aufnehmen"
   },
   "music": {
     "header": "Musik",
-    "text": "Leider bin ich grade nicht sehr aktiv, aber hoffentlich bald wieder.",
+    "text": "Meine Musik geht in Richtung Synthwave / Darksynth, kombiniert mit ein bisschen Rave und einem cinematischen Einfluss.",
     "button": "Meine Musik hören"
   }
 }
