@@ -5,15 +5,15 @@
 </div>
 
 <nav class="my-12 flex flex-col">
-    <a class="max-w-5xl bg-slate-900 hover:bg-slate-800 rounded-md sm:flex gap-8 group"
+    <a class="max-w-5xl bg-slate-900 hover:bg-slate-800 rounded-md sm:flex group"
        href="/dsp-blog/1-the-first-prototype">
         <!-- image -->
-        <div class="sm:basis-1/3 p-3 sm:p-4">
-            <img class="rounded-md border border-slate-600" src="/dsp-blog-1/frontend.jpg" alt="First Prototype" />
+        <div class="sm:basis-2/5 p-3 sm:p-4">
+            <img class="rounded-md border max-w-full border-slate-600" src="/dsp-blog-1/frontend.jpg" alt="First Prototype" />
         </div>
 
         <!-- text -->
-        <div class="sm:basis-2/3 p-3 sm:p-4">
+        <div class="sm:basis-3/5 p-3 sm:p-4">
 
             <!-- date -->
             <div class="text-slate-400 text-sm">

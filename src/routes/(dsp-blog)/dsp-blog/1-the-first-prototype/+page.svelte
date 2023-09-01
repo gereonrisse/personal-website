@@ -140,7 +140,7 @@ Thanks for reading!
 </h1>
 <h2 class="mt-2 text-slate-400">2023-09-01 - Gereon Risse</h2>
 
-<div class="markdown max-w-3xl mt-8 mb-16">
+<div class="markdown max-w-3xl mt-8">
     <SvelteMarkdown {source} />
 </div>
 

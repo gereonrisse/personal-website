@@ -48,10 +48,10 @@
     }
 </script>
 
-<div class="min-h-screen text-white" on:pointermove|preventDefault={handlePointerMove}>
+<div class="relative min-h-screen text-white" on:pointermove|preventDefault={handlePointerMove}>
     <Header/>
 
-    <main class="h-full max-w-5xl mx-auto">
+    <main class="h-full max-w-5xl mx-auto pb-48">
         <slot/>
     </main>
 
