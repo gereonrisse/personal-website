@@ -136,7 +136,7 @@ Thanks for reading!
 </script>
 
 <div class="mx-auto max-w-3xl">
-    <h1 class="mt-8 font-bold text-slate-100 text-5xl">
+    <h1 class="sm:mt-8 font-bold text-slate-100 text-5xl">
         The First Prototype
     </h1>
     <h2 class="mt-2 text-slate-400">
