@@ -26,6 +26,12 @@
         <!-- vertical divider -->
         <div class="w-px h-5 bg-slate-500"></div>
 
+        <!-- DSP blog -->
+        <a class="mt-0.5 text-xs text-slate-400 hover:text-rose-200" href="/dsp-blog">DSP blog</a>
+
+        <!-- vertical divider -->
+        <div class="w-px h-5 bg-slate-500"></div>
+
         <!-- language toggle -->
         <button class="text-xs text-slate-400 hover:text-rose-200"
                 on:click={toggleLocale}>
