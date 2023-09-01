@@ -135,46 +135,37 @@ Thanks for reading!
 
 </script>
 
-<h1 class="mt-8 font-bold text-slate-100 text-5xl">
-    The First Prototype
-</h1>
-<h2 class="mt-2 text-slate-400">2023-09-01 - Gereon Risse</h2>
+<div class="mx-auto max-w-3xl">
+    <h1 class="mt-8 font-bold text-slate-100 text-5xl">
+        The First Prototype
+    </h1>
+    <h2 class="mt-2 text-slate-400">
+        2023-09-01 - Gereon Risse
+    </h2>
+</div>
 
-<div class="markdown max-w-3xl mt-8">
+<div class="markdown max-w-3xl mt-8 mx-auto">
     <SvelteMarkdown {source} />
 </div>
 
 <style>
     .markdown > :global(p) {
-        @apply text-slate-200;
-        @apply text-sm;
-        @apply mt-2;
-        @apply leading-relaxed;
+        @apply text-slate-200 mt-2 leading-relaxed text-justify;
     }
 
     .markdown > :global(h1) {
-        @apply text-slate-300;
-        @apply font-bold;
-        @apply text-4xl;
-        @apply mt-8;
+        @apply text-slate-300 font-bold text-4xl mt-8;
     }
 
     .markdown > :global(figure) {
-        @apply my-6;
-        @apply ml-2;
+        @apply my-6 mx-2;
     }
 
     :global(img) {
-        @apply max-w-lg;
-        @apply border;
-        @apply border-slate-600;
-        @apply rounded;
+        @apply max-w-full max-h-[32rem] border border-slate-600 rounded;
     }
 
     :global(figcaption) {
-        @apply text-slate-400;
-        @apply text-sm;
-        @apply italic;
-        @apply mt-1;
+        @apply text-slate-400 text-sm italic mt-1;
     }
 </style>
