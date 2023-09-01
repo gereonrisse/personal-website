@@ -3,7 +3,7 @@
 
     const source = `
 **TL;DR:**
-I built the prototype for an audio DSP that controls speaker systems from scratch, but I did not have enough knowledge about the Rust language and low-level programming, so I will start over.
+I embarked on building a prototype for an audio DSP to control speaker systems from scratch. However, my limited knowledge of the Rust language and low-level programming prompted me to start over.
 <figure>
     <img src="/dsp-blog-1/frontend.jpg"
          alt="Frontend">
@@ -13,91 +13,89 @@ I built the prototype for an audio DSP that controls speaker systems from scratc
 </figure>
 
 # The Idea
-I love music, especially on the electronic side of things. And I love the sound systems that reproduce this music.
-So naturally, for the events I work at and for the parties my friends and me organize, it occured to me that I need an Audio DSP in my arsenal to tune the speaker systems to my liking.
-For those who don't know: An Audio DSP (Digital Signal Processor) is basically a computer that is highly specialized in applying sound shaping algorithms to a signal.
-You can put it between a source (your phone, the DJ Mixer, etc.) and your speaker system.
-The signal can then be shaped specifically to compensate errors in a loudspeaker and match different sound speakers together to form a coherent system.
+I have a deep passion for music, particularly in the electronic genre, and I appreciate high-quality sound systems that bring this music to life.
+Consequently, while working at events and organizing parties with my friends, it dawned on me that I needed an Audio DSP (Digital Signal Processor) in my toolkit to fine-tune speaker systems to my liking.
+For those unfamiliar with it, an Audio DSP is essentially a specialized computer tailored for applying sound-shaping algorithms to a signal.
+You can place it between a source (such as a phone or DJ Mixer) and a speaker system.
+This allows you to shape the signal precisely, correcting loudspeaker errors, and creating a coherent sound system by combining different speakers.
 
-So, in summer of 2022, I bought a powerful DSP, a dbx VENU360, and built a 19" rack for it while patiently awaiting shipment.
-But then the chip crisis destroyed my plans: I got a mail that the DSP would not be shipped this year; in fact, it is still not available to this day.
+In the summer of 2022, I purchased a robust DSP, the dbx VENU360, and constructed a 19" rack for it while eagerly awaiting its arrival.
+However, my plans were derailed by the chip crisis, receiving a notification that the DSP wouldn't be shipped that year — indeed, it's still unavailable as of today.
 
-At the same time, I started learning about the underlying technology of DSPs, and quickly came to know that they use specialized CPUs that can do signal processing very well, but nothing else particularly good.
-Most have implemented a fixed processing chain, which makes them very reliable, but at the same time very limited.
-The user can change parameters, but if you were to change the processing order or add an additional step, you're out of luck.
-Some DSPs are more flexible in that regard, but then you often have to compile your processing chain to machine code and upload it to the hardware.
-Not very convenient when you're working at a concert under high time constraints.
+At the same time, I delved into the underlying technology of DSPs and discovered that they use specialized CPUs that can do signal processing very well, but nothing else particularly good.
+Most DSPs have a fixed processing chain, offering reliability but limited flexibility.
+While some DSPs are more flexible in that regard, they often require you to compile your processing chain into machine code and upload it to the hardware—a cumbersome process, especially in high-pressure concert environments.
 
-These constraints made perfect sense when DSPs were first used in speaker systems in the last century. But compared to that, nowadays we have virtually unlimited processing power in our computers.
+These constraints made sense when DSPs were first used in speaker systems in the last century. However, today's computers boast virtually unlimited processing power.
 Also, with more processing power, more advanced sound shaping algorithms can be employed.
 
-Using a DAW (a software for music production and processing), you can easily route your audio into an ordinary computer, and apply any fancy processing chain you'd like live and in real-time.
-I actually did that in my living room using a 10 year old iMac, and it works flawlessly.
+Using a DAW (a software for music production and processing), you can easily route your audio into a standard computer and apply any sophisticated processing chain in real-time.
+I tested this with a ten-year-old iMac in my living room, and it works seamlessly.
 I still wouldn't use that kind of setup in a live venue, because the used soft- and hardware are not made for that purpose.
-Therefore, the setup is somewhat inconvenient to use and doesn't give you any guarantees about reliability.
+Therefore, it is somewhat inconvenient to use and doesn't give you any guarantees about reliability.
 
 So yeah, I'm a software developer and I want a powerful DSP. The challenge is on!
 
 # The Goals & Tech Stack
-It is not realistic to create a full-blown production-ready product like this alone and in a timely manner, so the goal is to create a minimal prototype.
+Realistically, it's not feasible to create a fully polished product like this on my own within a reasonable timeframe, so my objective is to develop a minimal prototype.
 
-I decided to make the processing chain node-based: Each processing step is a node, you can add as many as you like and connect them freely.
+I opted for a node-based processing chain, where each processing step is a node. You can add and connect nodes as needed.
 
-One of the defining challenges of this project is that it needs to be real-time: In a typical application, the DSP has 0.8ms to process the current signal.
+One of the fundamental challenges is real-time processing: In a typical application, the DSP has 0.8ms to process the current signal.
 If it were to take any longer even once, the only thing you'd hear are ugly loud clicking noises.
-To guarantee this, a real-time patched Linux needs to be used: It grants the software any processing power it needs right away, disregarding anything else that runs on the computer.
-For the same reason, you need to write the code in a programming language that provides low-level control over the machine; I therefore decided to settle on Rust.
+To ensure real-time processing, I use a real-time patched Linux, which grants the software any processing power it needs right away, disregarding anything else that runs on the computer.
+For low-level control over the machine, I selected Rust as the programming language.
 
-The machine can then be attached to a network (Ethernet cable of Wi-Fi), or alternatively host its own.
-It hosts a webserver providing the control interface, which means you can control the engine by simply opening a website on your laptop or phone.
-No more installing of horrendously outdated control programs that only run on Windows XP, yay!
+The device can be connected to a network (via Ethernet or Wi-Fi) or host its own network.
+It features a web server providing a user-friendly control interface, allowing you to adjust settings by simply opening a website on your laptop or phone.
+No more dealing with outdated control programs that only run on Windows XP!
 
-I use a Raspberry Pi as the hardware foundation, because for now it is easy to work with. In the future, more specialized hardware can be used.
-Attached to it is a Behringer UMC1820, which provides audio inputs/outputs and conversion from analog to digital and vice versa.
-You couldn't use that in a real production system, since it adds a lot of latency (~30ms).
-This could be mitigated by building a custom sound interface that connects directly to the GPIO pins of the Pi, but I'm not an electrical engineer, so the Behringer must suffice for now.
+As a hardware foundation, I employed a Raspberry Pi for its ease of use. In the future, more specialized hardware can be used.
+The Raspberry Pi is paired with a Behringer UMC1820, providing audio inputs/outputs and analog-to-digital/digital-to-analog conversion.
+While this setup introduces some latency (~30ms), which is unsuitable for a production system, it suffices for my current needs.
+The latency could be avoided by building a custom sound interface directly connected to the GPIO pins of the Pi, but I'm not an electrical engineer, so the Behringer must suffice for now.
 
 <figure>
     <img src="/dsp-blog-1/hardware_prototype.jpg"
          alt="Hardware prototype">
     <figcaption>
-        My hardware prototype, which just consists of the Behringer Interface with two audio inputs (left / right) going into it, a drawer full of cable adapters, and a Raspberry Pi hidden at the back.
-        The connection panel at the bottom has an additional input for a measurement mic (to automatically tune the settings in the future).
-        Of the eight outputs, currently three are connected: Left speaker, right speaker, subwoofer.
+        My hardware prototype, comprising the Behringer Interface with two audio inputs (left / right), a drawer full of cable adapters, and a Raspberry Pi hidden at the back.
+        The connection panel at the bottom includes an additional input for a measurement mic (for automatic system tuning in the future).
+        Currently, three of the eight outputs are connected: left speaker, right speaker, and subwoofer.
     </figcaption>
 </figure>
 
 # Implementing & The Point of Failure
 So I got started on implementing. I started with the engine, and along the way I learned a lot about Rust, real-time programming, graph algorithms, concurrency and much more.
-After a few months, I got a working engine. Since there was no frontend yet, the only way to control it was by either changing savefiles or an interactive CLI.
+After a few months, I had a functional engine. However, without a frontend, the only means of controlling it were via savefiles or an interactive CLI.
 <figure>
     <img src="/dsp-blog-1/cli.jpg"
          alt="Engine CLI">
     <figcaption>
-        CLI of the engine. Everything can be controlled from here, but it's not very user-friendly.
+        The engine CLI, offering control but lacking user-friendliness.
     </figcaption>
 </figure>
 
-As a demonstration, I created a signal chain for my desk speakers and it actually worked. Huge success!
+As a demonstration, I created a signal chain for my desk speakers - and it actually worked. A huge success!
 
 <figure>
     <img src="/dsp-blog-1/my_desk_signal_chain.jpg"
          alt="Hardware prototype">
     <figcaption>
-        The first ever actually useful signal chain, tuning the speakers at my desk. I had to draw it on paper since there was no frontend yet.
+        The first-ever functional signal chain, tuning the speakers at my desk. I had to sketch it on paper since there was no frontend at that stage.
     </figcaption>
 </figure>
 
-While implementing, the biggest challenge for me was concurrency: How could you alter the processing chain from the outside while the engine is continuously working on it?
-There are sophisticated (and really complex!) paradigms for this problem, but this was my first time doing low-level programming outside of university, and I couldn't quite wrap my head around them at the time.
-So I chose the naive approach of using mutexes for the time.
-Basically, mutexes just ensure that only one part of the program at a time accesses the processing chain by making all other parts wait until it is free again.
-This of course stands against the real-time principle: The engine isn't supposed to wait on another thread writing its changes, because it must finish its processing within those 0.8ms.
-But as long as there are not a lot of changes, it worked and I could continue tackling other challenges.
+Concurrent programming presented the most significant challenge during implementation.
+How could I modify the processing chain externally while the engine continued its work uninterrupted?
+While sophisticated (albeit complex) paradigms exist for this problem, I opted for the naive approach of using mutexes initially.
+Mutexes ensure that only one part of the program accesses the processing chain at a time, making other parts wait.
+However, this approach contradicts the real-time principle, as the engine shouldn't wait for another thread to write changes while processing within the 0.8ms window.
+Nevertheless, for minimal changes, it sufficed for the moment, allowing me to tackle other challenges.
 
-I then started implementing the frontend: A webpage, hosted by the engine itself, where you can drag around and connect the nodes to your liking.
-I used SvelteKit as a framework, which made it easy for me to turn ordinary HTML markup into a highly interactive app that feels more like a video game than a web page.
-After a few weeks, many aspects of the processing chain could be controlled live in a user-friendly manner.
+Subsequently, I ventured into frontend development—an interactive webpage hosted by the engine, enabling users to drag and connect nodes freely.
+I decided on SvelteKit as a framework, simplifying the transformation of standard HTML markup into a highly interactive application that resembles a video game more than a typical web page.
+After a few weeks, I achieved live, user-friendly control over many aspects of the processing chain.
 <figure>
     <img src="/dsp-blog-1/frontend.gif"
          alt="Frontend">
@@ -106,31 +104,32 @@ After a few weeks, many aspects of the processing chain could be controlled live
     </figcaption>
 </figure>
 
-I then tackled the challenge of visualization: Live dB meters that show you the current amplitude, frequency graph etc.
+I then tackled the challenge of visualization, creating live dB meters displaying current amplitude, frequency graphs, and more.
 <figure>
     <img src="/dsp-blog-1/db_meter.gif"
          alt="Frontend">
     <figcaption>
-        First implementation of a basic dB meter.
+        The initial implementation of a basic dB meter.
     </figcaption>
 </figure>
 
 As you can see, I got that to work as well, but here the problems started to arise:
 In order to visualize with 60 FPS, you'd have to access the processing chain 60 times a second.
-Remember my naive mutex implementation? Yeah, that's where it came back on me. Suddenly, the UI started to become very unresponsive.
-Additionally, since I didn't know much about organizing data structures in concurrent programs properly, race conditions started to surface which sometimes crashed the engine entirely.
+My initial mutex implementation proved inadequate, resulting in an unresponsive UI.
+Additionally, my limited knowledge of organizing data structures in concurrent programs led to race conditions that occasionally crashed the engine.
 
-At that point, it became clear to me that the codebase of the engine was deeply faulted and continuation of the development became unfeasible.
-After all, I just learned the language while coding in it, and also had to learn so many low-level paradigms on the way.
-As a result, the codebase is horrible, and know I know how to do it properly.
+At this point, it became evident that the engine's codebase had significant flaws, rendering further development impractical.
+After all, I was learning the language while coding, simultaneously grappling with various low-level paradigms.
+Consequently, the codebase ended up far from ideal.
 
 # What's next
-So yeah, the time to start over has come. I will rewrite the codebase from ground up, and this time with a proper architecture in mind from the start.
-It's a bit sad that the old engine has to go, but I don't feel the eight months I spent on the project are lost at all since it was a huge learning experience and a lot of fun.
+The time has come to start anew. I will rebuild the codebase from the ground up, this time with a well-structured architecture from the outset.
+Although it's somewhat disheartening to bid farewell to the old engine, I don't consider the eight months I spent on the project wasted.
+It was an invaluable learning experience and a lot of fun.
 
-I will try to document future developments in more blog posts, which will probably be much more technical than this one.
+I intend to document future developments in more technical blog posts.
 
-Thanks for reading!
+Thank you for reading!
     `
 
 </script>
