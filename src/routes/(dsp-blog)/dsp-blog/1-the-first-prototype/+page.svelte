@@ -2,6 +2,8 @@
     import SvelteMarkdown from 'svelte-markdown'
 
     const source = `
+**TL;DR:**
+I built the prototype for an audio DSP that controls speaker systems from scratch, but I did not have enough knowledge about the Rust language and low-level programming, so I will start over.
 <figure>
     <img src="/dsp-blog-1/frontend.jpg"
          alt="Frontend">
@@ -9,9 +11,6 @@
         Current state of the web frontend.
     </figcaption>
 </figure>
-
-**TL;DR:**
-I built the prototype for an audio DSP that controls speaker systems from scratch, but I did not have enough knowledge about the Rust language and low-level programming, so I will start over.
 
 # The Idea
 I love music, especially on the electronic side of things. And I love the sound systems that reproduce this music.
@@ -136,12 +135,46 @@ Thanks for reading!
 
 </script>
 
-<div class="markdown">
+<h1 class="mt-8 font-bold text-slate-100 text-5xl">
+    The First Prototype
+</h1>
+<h2 class="mt-2 text-slate-400">2023-09-01 - Gereon Risse</h2>
+
+<div class="markdown max-w-3xl mt-8 mb-16">
     <SvelteMarkdown {source} />
 </div>
 
 <style>
+    .markdown > :global(p) {
+        @apply text-slate-200;
+        @apply text-sm;
+        @apply mt-2;
+        @apply leading-relaxed;
+    }
+
+    .markdown > :global(h1) {
+        @apply text-slate-300;
+        @apply font-bold;
+        @apply text-4xl;
+        @apply mt-8;
+    }
+
+    .markdown > :global(figure) {
+        @apply my-6;
+        @apply ml-2;
+    }
+
     :global(img) {
-        width: 500px;
+        @apply max-w-lg;
+        @apply border;
+        @apply border-slate-600;
+        @apply rounded;
+    }
+
+    :global(figcaption) {
+        @apply text-slate-400;
+        @apply text-sm;
+        @apply italic;
+        @apply mt-1;
     }
 </style>
