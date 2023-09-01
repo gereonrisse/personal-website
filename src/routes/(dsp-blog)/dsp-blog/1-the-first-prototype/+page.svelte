@@ -2,7 +2,16 @@
     import SvelteMarkdown from 'svelte-markdown'
 
     const source = `
-TODO TLDR
+<figure>
+    <img src="/dsp-blog-1/frontend.jpg"
+         alt="Frontend">
+    <figcaption>
+        Current state of the web frontend.
+    </figcaption>
+</figure>
+
+**TL;DR:**
+I built the prototype for an audio DSP that controls speaker systems from scratch, but I did not have enough knowledge about the Rust language and low-level programming, so I will start over.
 
 # The Idea
 I love music, especially on the electronic side of things. And I love the sound systems that reproduce this music.
@@ -26,7 +35,7 @@ Also, with more processing power, more advanced sound shaping algorithms can be 
 Using a DAW (a software for music production and processing), you can easily route your audio into an ordinary computer, and apply any fancy processing chain you'd like live and in real-time.
 I actually did that in my living room using a 10 year old iMac, and it works flawlessly.
 I still wouldn't use that kind of setup in a live venue, because the used soft- and hardware are not made for that purpose.
-Therefore the setup is somewhat inconvenient to use and doesn't give you any guarantees about reliability.
+Therefore, the setup is somewhat inconvenient to use and doesn't give you any guarantees about reliability.
 
 So yeah, I'm a software developer and I want a powerful DSP. The challenge is on!
 
@@ -89,15 +98,15 @@ But as long as there are not a lot of changes, it worked and I could continue ta
 
 I then started implementing the frontend: A webpage, hosted by the engine itself, where you can drag around and connect the nodes to your liking.
 I used SvelteKit as a framework, which made it easy for me to turn ordinary HTML markup into a highly interactive app that feels more like a video game than a web page.
+After a few weeks, many aspects of the processing chain could be controlled live in a user-friendly manner.
 <figure>
     <img src="/dsp-blog-1/frontend.gif"
          alt="Frontend">
     <figcaption>
-        The frontend. You can also simultaneously control the engine from multiple devices (such as your phone) at the same time.
+        The frontend prototype. You can also simultaneously control the engine from multiple devices (such as your phone) at the same time.
     </figcaption>
 </figure>
 
-After a few weeks, many aspects of the processing chain could be controlled live in a user-friendly manner.
 I then tackled the challenge of visualization: Live dB meters that show you the current amplitude, frequency graph etc.
 <figure>
     <img src="/dsp-blog-1/db_meter.gif"
@@ -118,13 +127,11 @@ As a result, the codebase is horrible, and know I know how to do it properly.
 
 # What's next
 So yeah, the time to start over has come. I will rewrite the codebase from ground up, and this time with a proper architecture in mind from the start.
-It's a bit sad that the old engine has to go, but I don't feel the eight months I spent on the project are lost at all.
-It was a huge learning experience that increased my low-level skills drastically.
+It's a bit sad that the old engine has to go, but I don't feel the eight months I spent on the project are lost at all since it was a huge learning experience and a lot of fun.
 
-I will try to manifest future developments in more blog posts, which will probably be much more technical than this one.
+I will try to document future developments in more blog posts, which will probably be much more technical than this one.
 
 Thanks for reading!
-
     `
 
 </script>
