@@ -8,12 +8,12 @@ I embarked on building a prototype for an audio DSP to control speaker systems f
     <img src="/dsp-blog-1/frontend.jpg"
          alt="Frontend">
     <figcaption>
-        Current state of the web frontend.
+        The current state of the web frontend.
     </figcaption>
 </figure>
 
 # The Idea
-I have a deep passion for music, particularly in the electronic genre, and I appreciate high-quality sound systems that bring this music to life.
+I have a deep passion for music, particularly in the electronic genre, and even more so for high-quality sound systems that bring this music to life.
 Consequently, while working at events and organizing parties with my friends, it dawned on me that I needed an Audio DSP (Digital Signal Processor) in my toolkit to fine-tune speaker systems to my liking.
 For those unfamiliar with it, an Audio DSP is essentially a specialized computer tailored for applying sound-shaping algorithms to a signal.
 You can place it between a source (such as a phone or DJ Mixer) and a speaker system.
@@ -59,7 +59,7 @@ The latency could be avoided by building a custom sound interface directly conne
     <img src="/dsp-blog-1/hardware_prototype.jpg"
          alt="Hardware prototype">
     <figcaption>
-        My hardware prototype, comprising the Behringer Interface with two audio inputs (left / right), a drawer full of cable adapters, and a Raspberry Pi hidden at the back.
+        My hardware prototype (which was originally intended as a case for the dbx DSP), comprising the Behringer Interface with two audio inputs (left / right), a drawer full of cable adapters, and a Raspberry Pi hidden at the back.
         The connection panel at the bottom includes an additional input for a measurement mic (for automatic system tuning in the future).
         Currently, three of the eight outputs are connected: left speaker, right speaker, and subwoofer.
     </figcaption>
