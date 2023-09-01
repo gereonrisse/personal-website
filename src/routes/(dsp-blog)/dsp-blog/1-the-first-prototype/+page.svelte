@@ -48,13 +48,37 @@ I use a Raspberry Pi as the hardware foundation, because for now it is easy to w
 Attached to it is a Behringer UMC1820, which provides audio inputs/outputs and conversion from analog to digital and vice versa.
 You couldn't use that in a real production system, since it adds a lot of latency (~30ms).
 This could be mitigated by building a custom sound interface that connects directly to the GPIO pins of the Pi, but I'm not an electrical engineer, so the Behringer must suffice for now.
-TODO Hardware photo
+
+<figure>
+    <img src="/dsp-blog-1/hardware_prototype.jpg"
+         alt="Hardware prototype">
+    <figcaption>
+        My hardware prototype, which just consists of the Behringer Interface with two audio inputs (left / right) going into it, a drawer full of cable adapters, and a Raspberry Pi hidden at the back.
+        The connection panel at the bottom has an additional input for a measurement mic (to automatically tune the settings in the future).
+        Of the eight outputs, currently three are connected: Left speaker, right speaker, subwoofer.
+    </figcaption>
+</figure>
 
 # Implementing & The Point of Failure
 So I got started on implementing. I started with the engine, and along the way I learned a lot about Rust, real-time programming, graph algorithms, concurrency and much more.
 After a few months, I got a working engine. Since there was no frontend yet, the only way to control it was by either changing savefiles or an interactive CLI.
+<figure>
+    <img src="/dsp-blog-1/cli.jpg"
+         alt="Engine CLI">
+    <figcaption>
+        CLI of the engine. Everything can be controlled from here, but it's not very user-friendly.
+    </figcaption>
+</figure>
+
 As a demonstration, I created a signal chain for my desk speakers and it actually worked. Huge success!
-TODO CLI screenshot, processing chain drawing
+
+<figure>
+    <img src="/dsp-blog-1/my_desk_signal_chain.jpg"
+         alt="Hardware prototype">
+    <figcaption>
+        The first ever actually useful signal chain, tuning the speakers at my desk. I had to draw it on paper since there was no frontend yet.
+    </figcaption>
+</figure>
 
 While implementing, the biggest challenge for me was concurrency: How could you alter the processing chain from the outside while the engine is continuously working on it?
 There are sophisticated (and really complex!) paradigms for this problem, but this was my first time doing low-level programming outside of university, and I couldn't quite wrap my head around them at the time.
@@ -65,16 +89,28 @@ But as long as there are not a lot of changes, it worked and I could continue ta
 
 I then started implementing the frontend: A webpage, hosted by the engine itself, where you can drag around and connect the nodes to your liking.
 I used SvelteKit as a framework, which made it easy for me to turn ordinary HTML markup into a highly interactive app that feels more like a video game than a web page.
-TODO frontend gif
+<figure>
+    <img src="/dsp-blog-1/frontend.gif"
+         alt="Frontend">
+    <figcaption>
+        The frontend. You can also simultaneously control the engine from multiple devices (such as your phone) at the same time.
+    </figcaption>
+</figure>
 
 After a few weeks, many aspects of the processing chain could be controlled live in a user-friendly manner.
 I then tackled the challenge of visualization: Live dB meters that show you the current amplitude, frequency graph etc.
-TODO db meter gif
+<figure>
+    <img src="/dsp-blog-1/db_meter.gif"
+         alt="Frontend">
+    <figcaption>
+        First implementation of a basic dB meter.
+    </figcaption>
+</figure>
 
 As you can see, I got that to work as well, but here the problems started to arise:
 In order to visualize with 60 FPS, you'd have to access the processing chain 60 times a second.
-Remember my naive mutex implementation? Yeah, that's where it came back on me. Suddenly, the engine started to have a lot of outages.
-Additionally, since I didn't know much about organizing data structures in concurrent programs properly, race conditions started to surface which crashed the engine entirely.
+Remember my naive mutex implementation? Yeah, that's where it came back on me. Suddenly, the UI started to become very unresponsive.
+Additionally, since I didn't know much about organizing data structures in concurrent programs properly, race conditions started to surface which sometimes crashed the engine entirely.
 
 At that point, it became clear to me that the codebase of the engine was deeply faulted and continuation of the development became unfeasible.
 After all, I just learned the language while coding in it, and also had to learn so many low-level paradigms on the way.
@@ -93,4 +129,12 @@ Thanks for reading!
 
 </script>
 
-<SvelteMarkdown {source} />
+<div class="markdown">
+    <SvelteMarkdown {source} />
+</div>
+
+<style>
+    :global(img) {
+        width: 500px;
+    }
+</style>
