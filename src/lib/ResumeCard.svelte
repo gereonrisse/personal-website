@@ -8,7 +8,7 @@
     </div>
 
     <!-- right side -->
-    <div class="sm:pr-12 sm:basis-2/3 text-justify">
+    <div class="sm:pr-12 sm:basis-2/3">
         <div class="max-w-sm">
             <h2 class="text-lg font-bold text-slate-100">
                 <slot name="header"/>
