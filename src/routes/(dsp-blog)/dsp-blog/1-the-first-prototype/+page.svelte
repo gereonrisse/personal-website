@@ -134,16 +134,16 @@ Thank you for reading!
 
 </script>
 
-<div class="mx-auto max-w-3xl">
+<div class="mx-auto max-w-2xl">
     <h1 class="sm:mt-8 font-bold text-slate-100 text-5xl">
         The First Prototype
     </h1>
-    <h2 class="mt-2 text-slate-400">
+    <h2 class="mt-4 sm:mt-2 text-slate-400">
         2023-09-01 - Gereon Risse
     </h2>
 </div>
 
-<div class="markdown max-w-3xl mt-8 mx-auto">
+<div class="markdown max-w-2xl mt-8 mx-auto">
     <SvelteMarkdown {source} />
 </div>
 
@@ -157,7 +157,7 @@ Thank you for reading!
     }
 
     .markdown > :global(figure) {
-        @apply my-6 mx-2;
+        @apply my-6;
     }
 
     :global(img) {
@@ -165,6 +165,6 @@ Thank you for reading!
     }
 
     :global(figcaption) {
-        @apply text-slate-400 text-sm italic mt-1;
+        @apply text-slate-400 text-sm italic mt-1 text-justify;
     }
 </style>
