@@ -165,6 +165,6 @@ Thank you for reading!
     }
 
     :global(figcaption) {
-        @apply text-slate-400 text-sm italic mt-1 text-justify;
+        @apply text-slate-400 text-sm italic mt-2 text-justify;
     }
 </style>
