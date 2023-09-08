@@ -7,3 +7,4 @@ My personal portfolio at [gereon-risse.com](https://gereon-risse.com/), built wi
 - [ ] Add full CV PDF
 - [ ] Add Imprint modal 
 - [ ] Add DSP blog 
+- [ ] refactor components

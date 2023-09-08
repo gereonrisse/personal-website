@@ -27,14 +27,14 @@
 </svelte:head>
 
 <!-- INTRO SECTION -->
-<section class="flex flex-col min-h-screen my-auto justify-center max-w-5xl">
+<section class="flex flex-col min-h-screen my-auto justify-center max-w-5xl mb-12">
     <div class="flex flex-col sm:flex-row gap-8 sm:gap-12 px-4">
         <!-- Header -->
         <div class="sm:basis-1/3 flex flex-col my-16 sm:my-0">
             <h1 class="text-4xl font-bold text-slate-100 animate-fade-in motion-reduce:animate-none">
                 {$t('home.title')}
             </h1>
-            <nav class="text-xl font-bold text-slate-500 mt-8 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
+            <nav class="text-[23.5px] font-bold text-slate-500 mt-8 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
                 <ol>
                     <li class="hover:text-rose-300"><a href="#software">{$t('home.subtitle1')}</a></li>
                     <li class="hover:text-rose-300"><a href="#audio">{$t('home.subtitle2')}</a></li>
@@ -63,7 +63,7 @@
 {/if}
 
 <div class="flex flex-col gap-12 sm:gap-32">
-    <Divider/>
+    <Divider />
 
     <!-- SOFTWARE SECTION -->
     <section>
