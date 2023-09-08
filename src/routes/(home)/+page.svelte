@@ -13,11 +13,8 @@
     // Down Arrow.
     let showArrow = true;
     if (browser) {
-        const handleScroll = () => {
-            showArrow = false;
-            window.removeEventListener('scroll', handleScroll);
-        };
-        window.addEventListener('scroll', handleScroll);
+        // Show arrow if scrolled to the top, hide otherwise.
+        window.addEventListener('scroll', () => showArrow = window.scrollY === 0);
     }
 </script>
 
@@ -25,6 +22,18 @@
     <title>Gereon Risse</title>
     <meta content="Personal website of Gereon Risse" name="description"/>
 </svelte:head>
+
+<!-- Down Arrow -->
+{#if showArrow}
+    <div id="down-arrow"
+         class="fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-8 p-3 rounded-full animate-fade-in-delayed motion-reduce:animate-none z-10 backdrop-blur"
+         transition:fade
+    >
+        <div class="h-6 w-6 text-slate-300">
+            <DownArrow/>
+        </div>
+    </div>
+{/if}
 
 <!-- INTRO SECTION -->
 <section class="flex flex-col min-h-screen my-auto justify-center max-w-5xl mb-12">
@@ -51,16 +60,6 @@
         </div>
     </div>
 </section>
-
-<!-- Down Arrow -->
-{#if showArrow}
-    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 p-3 rounded-full animate-fade-in-delayed motion-reduce:animate-none z-10 backdrop-blur"
-         transition:fade>
-        <div class="h-6 w-6 text-slate-300">
-            <DownArrow/>
-        </div>
-    </div>
-{/if}
 
 <div class="flex flex-col gap-12 sm:gap-32">
     <Divider />
