@@ -2,7 +2,7 @@
     import ResumeCard from "$lib/ResumeCard.svelte";
     import Tag from "$lib/Tag.svelte";
     import Link from "$lib/ExternalLink.svelte";
-    import {t, locale} from '$lib/translations';
+    import {locale, t} from '$lib/translations';
     import SectionHeader from "$lib/SectionHeader.svelte";
     import Button from "$lib/Button.svelte";
     import Divider from "$lib/Divider.svelte";
@@ -64,7 +64,7 @@
 </section>
 
 <div class="flex flex-col gap-12 sm:gap-32">
-    <Divider />
+    <Divider/>
 
     <!-- SOFTWARE SECTION -->
     <section>
@@ -190,9 +190,11 @@
             </div>
 
             <div class="mt-6 sm:mt-8 text-center">
-                <Button>
-                    <a href="mailto:gereon.risse@gmail.com">{$t('home.audio.button')}</a>
-                </Button>
+                <a href="mailto:gereon.risse@gmail.com">
+                    <Button>
+                        {$t('home.audio.button')}
+                    </Button>
+                </a>
             </div>
         </div>
     </section>
@@ -207,9 +209,11 @@
             <p class="leading-relaxed text-slate-300">{$t('home.music.text')}</p>
 
             <div class="mt-6 sm:mt-8 w-full text-center">
-                <Button>
-                    <a href="https://gereon.online/" target="_blank">{$t('home.music.button')}</a>
-                </Button>
+                <a href="https://gereon.online/" target="_blank">
+                    <Button>
+                        {$t('home.music.button')}
+                    </Button>
+                </a>
             </div>
         </div>
     </section>
