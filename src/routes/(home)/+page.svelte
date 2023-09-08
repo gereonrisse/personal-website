@@ -2,7 +2,7 @@
     import ResumeCard from "$lib/ResumeCard.svelte";
     import Tag from "$lib/Tag.svelte";
     import Link from "$lib/ExternalLink.svelte";
-    import {t} from '$lib/translations';
+    import {t, locale} from '$lib/translations';
     import SectionHeader from "$lib/SectionHeader.svelte";
     import Button from "$lib/Button.svelte";
     import Divider from "$lib/Divider.svelte";
@@ -16,6 +16,8 @@
         // Show arrow if scrolled to the top, hide otherwise.
         window.addEventListener('scroll', () => showArrow = window.scrollY === 0);
     }
+
+    $: cv_path = $locale === 'de' ? '/cv_gereon_risse_german.pdf' : '/cv_gereon_risse_english.pdf';
 </script>
 
 <svelte:head>
@@ -157,13 +159,15 @@
             </ResumeCard>
 
             <!-- TODO add CV -->
-            <!-- <div>
+            <div class="px-4">
                 <div class="mx-auto max-w-sm">
-                    <Button>
-                        <a href="#" target="_blank">{$t('home.software.cv')}</a>
-                    </Button>
+                    <a href="{cv_path}" target="_blank">
+                        <Button>
+                            {$t('home.software.cv')}
+                        </Button>
+                    </a>
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </section>
