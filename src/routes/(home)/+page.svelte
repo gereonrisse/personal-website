@@ -43,7 +43,7 @@
             <h1 class="text-4xl font-bold text-slate-100 animate-fade-in motion-reduce:animate-none">
                 {$t('home.title')}
             </h1>
-            <nav class="text-[23.5px] font-bold text-slate-500 mt-8 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
+            <nav class="text-[23.5px] font-bold text-slate-500 mt-8 sm:leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
                 <ol>
                     <li class="hover:text-rose-300"><a href="#software">{$t('home.subtitle1')}</a></li>
                     <li class="hover:text-rose-300"><a href="#audio">{$t('home.subtitle2')}</a></li>

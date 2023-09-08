@@ -1,5 +1,6 @@
 <script>
     import SvelteMarkdown from 'svelte-markdown'
+    import DownArrow from "$lib/svg/DownArrow.svelte";
 
     const source = `
 **TL;DR:**
@@ -13,7 +14,7 @@ I embarked on building a prototype for an audio DSP to control speaker systems f
 </figure>
 
 # The Idea
-I have a deep passion for music, particularly in the electronic genre, and even more so for high-quality sound systems that bring this music to life.
+I have a deep passion for music, particularly in the electronic genres, and even more so for high-quality sound systems that bring this music to life.
 Consequently, while working at events and organizing parties with my friends, it dawned on me that I needed an Audio DSP (Digital Signal Processor) in my toolkit to fine-tune speaker systems to my liking.
 For those unfamiliar with it, an Audio DSP is essentially a specialized computer tailored for applying sound-shaping algorithms to a signal.
 You can place it between a source (such as a phone or DJ Mixer) and a speaker system.
@@ -135,7 +136,15 @@ Thank you for reading!
 </script>
 
 <div class="mx-auto max-w-2xl">
-    <h1 class="sm:mt-8 font-bold text-slate-100 text-5xl">
+    <a href="/dsp-blog" class="text-slate-400 hover:text-rose-300 flex gap-2 underline">
+        <!-- DownArrow, rotated 90° -->
+        <div class="rotate-90 h-3.5 w-3.5 mt-1.5">
+            <DownArrow />
+        </div>
+        <span>back</span>
+    </a>
+
+    <h1 class="mt-4 sm:mt-8 font-bold text-slate-100 text-5xl">
         The First Prototype
     </h1>
     <h2 class="mt-4 sm:mt-2 text-slate-400">
