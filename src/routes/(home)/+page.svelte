@@ -2,7 +2,7 @@
     import ResumeCard from "$lib/ResumeCard.svelte";
     import Tag from "$lib/Tag.svelte";
     import Link from "$lib/ExternalLink.svelte";
-    import {t} from '$lib/translations';
+    import {locale, t} from '$lib/translations';
     import SectionHeader from "$lib/SectionHeader.svelte";
     import Button from "$lib/Button.svelte";
     import Divider from "$lib/Divider.svelte";
@@ -13,12 +13,11 @@
     // Down Arrow.
     let showArrow = true;
     if (browser) {
-        const handleScroll = () => {
-            showArrow = false;
-            window.removeEventListener('scroll', handleScroll);
-        };
-        window.addEventListener('scroll', handleScroll);
+        // Show arrow if scrolled to the top, hide otherwise.
+        window.addEventListener('scroll', () => showArrow = window.scrollY === 0);
     }
+
+    $: cv_path = $locale === 'de' ? '/cv_gereon_risse_german.pdf' : '/cv_gereon_risse_english.pdf';
 </script>
 
 <svelte:head>
@@ -26,15 +25,27 @@
     <meta content="Personal website of Gereon Risse" name="description"/>
 </svelte:head>
 
+<!-- Down Arrow -->
+{#if showArrow}
+    <div id="down-arrow"
+         class="fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-8 p-3 rounded-full animate-fade-in-delayed motion-reduce:animate-none z-10 backdrop-blur"
+         transition:fade
+    >
+        <div class="h-6 w-6 text-slate-300">
+            <DownArrow/>
+        </div>
+    </div>
+{/if}
+
 <!-- INTRO SECTION -->
-<section class="flex flex-col min-h-screen my-auto justify-center max-w-5xl">
-    <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 px-4">
+<section class="flex flex-col min-h-screen my-auto justify-center max-w-5xl mb-12">
+    <div class="flex flex-col sm:flex-row gap-8 sm:gap-12 px-4">
         <!-- Header -->
-        <div class="sm:basis-1/3 flex flex-col">
+        <div class="sm:basis-1/3 flex flex-col my-16 sm:my-0">
             <h1 class="text-4xl font-bold text-slate-100 animate-fade-in motion-reduce:animate-none">
                 {$t('home.title')}
             </h1>
-            <nav class="text-xl font-bold text-slate-500 my-6 leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
+            <nav class="text-[23.5px] font-bold text-slate-500 mt-8 sm:leading-relaxed animate-fly-in-fast motion-reduce:animate-none">
                 <ol>
                     <li class="hover:text-rose-300"><a href="#software">{$t('home.subtitle1')}</a></li>
                     <li class="hover:text-rose-300"><a href="#audio">{$t('home.subtitle2')}</a></li>
@@ -51,16 +62,6 @@
         </div>
     </div>
 </section>
-
-<!-- Down Arrow -->
-{#if showArrow}
-    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 p-3 rounded-full animate-fade-in-delayed motion-reduce:animate-none z-10 backdrop-blur"
-         transition:fade>
-        <div class="h-6 w-6 text-slate-300">
-            <DownArrow/>
-        </div>
-    </div>
-{/if}
 
 <div class="flex flex-col gap-12 sm:gap-32">
     <Divider/>
@@ -158,13 +159,15 @@
             </ResumeCard>
 
             <!-- TODO add CV -->
-            <!-- <div>
+            <div class="px-4">
                 <div class="mx-auto max-w-sm">
-                    <Button>
-                        <a href="#" target="_blank">{$t('home.software.cv')}</a>
-                    </Button>
+                    <a href="{cv_path}" target="_blank">
+                        <Button>
+                            {$t('home.software.cv')}
+                        </Button>
+                    </a>
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </section>
@@ -187,9 +190,11 @@
             </div>
 
             <div class="mt-6 sm:mt-8 text-center">
-                <Button>
-                    <a href="mailto:gereon.risse@gmail.com">{$t('home.audio.button')}</a>
-                </Button>
+                <a href="mailto:gereon.risse@gmail.com">
+                    <Button>
+                        {$t('home.audio.button')}
+                    </Button>
+                </a>
             </div>
         </div>
     </section>
@@ -204,9 +209,11 @@
             <p class="leading-relaxed text-slate-300">{$t('home.music.text')}</p>
 
             <div class="mt-6 sm:mt-8 w-full text-center">
-                <Button>
-                    <a href="https://gereon.online/" target="_blank">{$t('home.music.button')}</a>
-                </Button>
+                <a href="https://gereon.online/" target="_blank">
+                    <Button>
+                        {$t('home.music.button')}
+                    </Button>
+                </a>
             </div>
         </div>
     </section>

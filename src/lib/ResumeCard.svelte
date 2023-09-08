@@ -22,9 +22,11 @@
                 <slot name="description"/>
             </p>
 
-            <div class="mt-4">
-                <slot name="tags"/>
-            </div>
+            {#if $$slots.tags}
+                <div class="mt-4">
+                    <slot name="tags"/>
+                </div>
+            {/if}
         </div>
     </div>
 
