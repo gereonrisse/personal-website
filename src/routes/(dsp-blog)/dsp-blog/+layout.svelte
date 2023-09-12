@@ -1,5 +1,6 @@
 <script>
     import Footer from "$lib/Footer.svelte";
+    import "../../../app.css";
 </script>
 
 <div class="relative bg-slate-950 min-h-screen">
