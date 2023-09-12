@@ -4,6 +4,7 @@
 
 :root {
     font-family: 'Inter', sans-serif;
+    @apply bg-slate-950;
 }
 
 @supports (font-variation-settings: normal) {
